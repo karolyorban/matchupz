@@ -8,10 +8,92 @@ body {
     min-height: 100vh;
 }
 
+/* --------------------- HAMBURGER MENU STYLING ----------------------------- */
+
+.hamburger_menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.menu_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.menu_btn:hover {
+    background-color: rgba(57, 197, 141, 0.8);
+    border-radius: 20%;
+}
+
+.menu_icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#menu_toggle {
+    opacity: 0;
+    position: absolute;
+}
+
+#menu_toggle:checked ~ .menu_btn .menu_icon {
+    transform: rotate(90deg);
+}
+
+#menu_toggle:checked ~ .menu_box {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu_box {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 10vw;
+    margin: 0;
+    padding: 2rem 0;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 0px 20px 0px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+.menu_item {
+    display: block;
+    padding: 12px 24px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu_item:hover {
+    background-color: #39c58d;
+    color: white;
+}
+
+/* --------------------- HAMBURGER MENU STYLING ----------------------------- */
+
 .video_header {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
 }
 
@@ -37,13 +119,15 @@ body {
     text-align: center;
 }
 
-.video_header div .name {
-    font-size: 1000%;
-}
-
 .video_header div .slogan {
     font-size: 300%;
-    padding-top: 20%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-top: 10%;
+}
+
+.logo_text {
+    width: 70%;
 }
 
 .green {
@@ -85,12 +169,62 @@ body {
     flex-wrap: wrap;
 }
 
-.image_text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/*----*/
+/* Flip Card Styles */
+.flip_card {
+    perspective: 1000px;
     margin: 0 15px;
+    position: relative;
 }
+
+.flip_card_inner {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip_card:hover .flip_card_inner {
+    transform: rotateY(180deg);
+}
+
+.flip_card_front, .flip_card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.flip_card_front {
+    background-color: #fff;
+    z-index: 2;
+}
+
+.flip_card_back {
+    background-color: #39c58d;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.flip_card .round_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjust the caption positioning */
+.flip_card .image_caption {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+/*----*/
 
 .image_caption {
     text-align: center;
