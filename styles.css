@@ -6,15 +6,55 @@
 
 body {
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+/* ---------------------   STICKY MENU STYLING ------------------------------ */
+.sticky_menu {
+    position: fixed;
+    top: none;
+    z-index: 3; /*check if it is visible over staff part*/
+    display: flex;
+    justify-content: center;
+    padding: none;
+    width: 100%;
 }
 
+.sticky_menu ul {
+    display: flex;
+    list-style: none;
+    background-color: rgba(57, 197, 141, 0.7);
+    padding: 1rem 2rem;
+    border-radius: 0 0 30px 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sticky_menu li {
+    margin: 0 1rem;
+}
+
+.sticky_menu a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.sticky_menu a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+/* --------------------- STICKY MENU STYLING END ---------------------------- */
 /* --------------------- HAMBURGER MENU STYLING ----------------------------- */
 
 .hamburger_menu {
     position: fixed;
-    top: 20px;
+    top: 2rem;
     right: 20px;
-    z-index: 1;
+    z-index: 4;
 }
 
 .menu_btn {
@@ -76,7 +116,7 @@ body {
     display: block;
     padding: 12px 24px;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -88,13 +128,14 @@ body {
     color: white;
 }
 
-/* --------------------- HAMBURGER MENU STYLING ----------------------------- */
+/* --------------------- HAMBURGER MENU STYLING END ------------------------ */
 
 .video_header {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .video_header video {
@@ -110,13 +151,9 @@ body {
     filter: brightness(0.6);
   }
 
-  .video_header div {
+.video_header div {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
-    text-align: center;
 }
 
 .video_header div .slogan {
@@ -128,16 +165,57 @@ body {
 
 .logo_text {
     width: 70%;
+    margin: 0;
+    align-self:center;
 }
 
 .green {
     color: #39c58d;
 }
 
+.header_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.header_text {
+    background-color: rgba(57, 197, 141, 0.2);
+    padding: 0.5rem;
+    border-radius: 0 20px 20px 0;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 0;
+}
+
+.logo_text_subtext {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.slogan_subtext {
+    font-size: 1.2rem;
+    color: grey;
+}
+
+/*---------------------------- start of staff ----------------------------------------------------*/
+
 .staff {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     overflow: hidden;
 }
 
@@ -181,12 +259,12 @@ body {
     position: relative;
     width: 220px;
     height: 220px;
-    transition: transform 0.8s;
+    transition: transform 1.2s;
     transform-style: preserve-3d;
 }
 
 .flip_card:hover .flip_card_inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) scale(1.4);
 }
 
 .flip_card_front, .flip_card_back {
@@ -196,6 +274,8 @@ body {
     backface-visibility: hidden;
     border-radius: 50%;
     overflow: hidden;
+    border: 3px solid rgba(57, 197, 141, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 2.3);
 }
 
 .flip_card_front {
@@ -213,8 +293,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 3px solid white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+    box-shadow: none;
 }
 
 /* Adjust the caption positioning */
@@ -245,12 +325,7 @@ body {
 }
 
 .round_image {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
     object-fit: cover;
-    border: 3px solid white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease;
 }
 
@@ -259,7 +334,89 @@ body {
 }
 
 
+/* ------------------------ end of staff ------------------------------- */
+/* ------------------------ start of bottom ---------------------------- */
+/* Content Section Styles */
+.content_section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
 
+.content_video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    filter: brightness(0.6);
+}
+
+.content_container {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.anpfiff {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.content_logo {
+    max-height: 80px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.content_logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1) invert(0);
+}
+
+.formular_button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #39c58d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.formular_button:hover {
+    background-color: #2fa876;
+    transform: scale(1.05);
+}
+/* ------------------------ end of bottom ------------------------------ */
 
 
 
