@@ -187,5 +187,42 @@
     <footer>
         this is the footer
     </footer>
+<!-- start of popup form -->
+<div class="form_modal" id="matchFormModal">
+    <div class="modal_content">
+        <span class="close_modal">&times;</span>
+        <h2>Test Formular</h2>
+        <form class="match_form">
+            <div class="form_group">
+                <label for="name">Name des Clubs</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form_group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form_group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form_group">
+                <label for="role">Ich bin der</label>
+                <select id="role" name="role" required>
+                    <option value="">Select...</option>
+                    <option value="player">Manager</option>
+                    <option value="club">Assistant</option>
+                    <option value="agent">Sekretärin</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="message">Magst mit uns etwas mitteilen?</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit_button">Abschicken</button>
+        </form>
+    </div>
+</div>
+<!-- end of popup form -->
+<script src="scripts/form.js"></script>
 </body>
 </html>
