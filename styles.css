@@ -30,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(57, 197, 141, 0.2);
+    background-color: rgba(61, 213, 152, 0.2);
     backdrop-filter: blur(5px);
     z-index: -1; /* Place behind links */
 }
@@ -81,7 +81,7 @@ body {
 }
 
 .menu_btn:hover {
-    background-color: rgba(57, 197, 141, 0.8);
+    background-color: rgba(61, 213, 152, 0.8);
     border-radius: 20%;
 }
 
@@ -201,7 +201,7 @@ body {
 }
 
 .header_text {
-    background-color: rgba(57, 197, 141, 0.2);
+    background-color: rgba(61, 213, 152, 0.2);
     padding: 20vh 2vw;
     border-radius: 0 0 20px 0;
     backdrop-filter: blur(5px);
@@ -288,7 +288,7 @@ body {
     backface-visibility: hidden;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid rgba(57, 197, 141, 0.8);
+    border: 3px solid rgba(61, 213, 152, 0.8);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 2.3);
 }
 
