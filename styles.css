@@ -12,22 +12,34 @@ body {
 /* ---------------------   STICKY MENU STYLING ------------------------------ */
 .sticky_menu {
     position: fixed;
-    top: none;
+    top: 0; /*0 vs none*/
+    height: 12vh;
+    left: 0;
+    right: 5vw;
+    width: 100%;
     z-index: 3; /*check if it is visible over staff part*/
     display: flex;
-    justify-content: center;
-    padding: none;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.sticky_menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgba(57, 197, 141, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: -1; /* Place behind links */
 }
 
 .sticky_menu ul {
     display: flex;
     list-style: none;
-    background-color: rgba(57, 197, 141, 0.7);
     padding: 1rem 2rem;
-    border-radius: 0 0 30px 30px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 0;
 }
 
 .sticky_menu li {
@@ -54,7 +66,7 @@ body {
     position: fixed;
     top: 2rem;
     right: 20px;
-    z-index: 4;
+    z-index: -4; /*hiding it for now, maybe we'll need it later*/
 }
 
 .menu_btn {
@@ -164,9 +176,11 @@ body {
 }
 
 .logo_text {
-    width: 70%;
-    margin: 0;
-    align-self:center;
+    position: fixed;
+    top: 0;
+    left: 28vh;
+    width: 10%;
+    z-index: 3; /*check if it is enough*/
 }
 
 .green {
@@ -175,7 +189,7 @@ body {
 
 .header_content {
     position: absolute;
-    top: 0;
+    top: 12vh;
     left: 0;
     width: 40%;
     height: 100%;
@@ -188,8 +202,8 @@ body {
 
 .header_text {
     background-color: rgba(57, 197, 141, 0.2);
-    padding: 0.5rem;
-    border-radius: 0 20px 20px 0;
+    padding: 20vh 2vw;
+    border-radius: 0 0 20px 0;
     backdrop-filter: blur(5px);
     width: 100%;
     height: 100%;
@@ -340,7 +354,7 @@ body {
 .content_section {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -367,7 +381,7 @@ body {
     width: 80%;
     height: 80%;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     backdrop-filter: blur(5px);
@@ -376,14 +390,15 @@ body {
 .anpfiff {
     font-size: 4rem;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: none;
     font-family: Arial, sans-serif;
 }
 
 .logo_container {
     display: flex;
-    justify-content: center;
-    gap: 15rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 2rem;
     margin-top: 4rem;
     flex-wrap: wrap;
@@ -400,8 +415,6 @@ body {
     width: auto;
     filter: contrast(0.5);
 }
-
-
 
 .formular_button {
     padding: 1rem 2rem;
