@@ -10,9 +10,10 @@ body {
     padding: 0;
 }
 /* ---------------------   STICKY MENU STYLING ------------------------------ */
+/*here i start*/
 .sticky_menu {
     position: fixed;
-    top: 0; /*0 vs none*/
+    top: 0;
     height: 12vh;
     left: 0;
     right: 5vw;
@@ -23,6 +24,8 @@ body {
     padding: 0;
 }
 
+
+
 .sticky_menu::before {
     content: "";
     position: absolute;
@@ -30,9 +33,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(61, 213, 152, 0);
+    backdrop-filter: blur(0);
+    z-index: -1; /* Place behind links */
+    transition: all 0.3s ease;
+}
+
+.sticky_menu.scrolled::before {
     background-color: rgba(61, 213, 152, 0.2);
     backdrop-filter: blur(5px);
-    z-index: -1; /* Place behind links */
 }
 
 .sticky_menu ul {
