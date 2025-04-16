@@ -21,6 +21,7 @@ body {
     z-index: 3; /*check if it is visible over staff part*/
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: 0;
 }
 
@@ -186,21 +187,21 @@ body {
 
 .logo_text {
     position: fixed;
-    top: 0;
-    left: 28vh;
+    top: auto;
+    left: 19vh;
     width: 10%;
     z-index: 3; /*check if it is enough*/
 }
 
 .green {
-    color: #39c58d;
+    color: #3DD598;
 }
 
 .header_content {
     position: absolute;
     top: 0;
     left: 0;
-    width: 40%;
+    width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -223,11 +224,13 @@ body {
 
 .header_logo {
     width: 20vw;
+    padding-top: 10vh;
     height: auto;
+    filter: brightness(0) invert(1);
 }
 
 .header_text {
-    background-color: rgba(61, 213, 152, 0.2);
+    background: #3DD598 url('mix/left_bckr.jpeg') center / cover no-repeat;
     padding: 20vh 2vw;
     border-radius: 0 0 20px 0;
     backdrop-filter: blur(5px);
