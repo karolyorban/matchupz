@@ -1,3 +1,10 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('Fonts/montserrat_n.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -150,6 +157,29 @@ body {
     color: white;
 }
 
+.sticky_menu .formular_button {    
+    border: 3px solid white;
+}
+
+.ball_button {
+    position: absolute;
+    top: 80vh;
+    right: 77.5vw;
+}
+
+.rolling_ball {
+    position: absolute;
+    width: 10vw;
+    right: 2.5vw;
+    top: -1vh;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    pointer-events: none;
+}
+
+.ball_button:hover .rolling_ball{
+    transform: translate(-200%, -50%) rotateZ(360deg);
+}
+
 /* --------------------- HAMBURGER MENU STYLING END ------------------------ */
 
 .video_header {
@@ -178,23 +208,12 @@ body {
     color: white;
 }
 
-.video_header div .slogan {
-    font-size: 300%;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    padding-top: 10%;
-}
-
 .logo_text {
     position: fixed;
     top: auto;
     left: 19vh;
     width: 10%;
     z-index: 3; /*check if it is enough*/
-}
-
-.green {
-    color: #3DD598;
 }
 
 .header_content {
@@ -212,8 +231,8 @@ body {
 
 .header_logos {
     position: absolute;
-    right: 10vw;
-    top: 30%;
+    right: 5vw;
+    top: 10%;
     transform: translate(-50%);
     display: flex;
     flex-direction: column;
@@ -222,9 +241,15 @@ body {
     z-index: 2;
 }
 
-.header_logo {
-    width: 20vw;
+.header_logo_1 {
+    width: 30vw;
     padding-top: 10vh;
+    height: auto;
+}
+
+.header_logo_2 {
+    width: 15vw;
+    padding-top: none;
     height: auto;
     filter: brightness(0) invert(1);
 }
@@ -239,40 +264,39 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    text-align: center;
+    text-align: left;
     margin: 0;
 }
 
 .logo_text_subtext {
-    font-size: 1.5rem;
-    color: grey;
-    margin-top: 2vh;
-    margin-bottom: 12vh;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'montserrat', sans-serif;
+    font-size: clamp(19.2px, 2.08vw, 40px);
+    font-weight: bold;
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 .slogan_subtext {
-    font-size: 1.2rem;
-    color: grey;
-    margin-top: 5vh;
+    width: 100%;
+    max-width: 100%;
+    font-family: 'montserrat', sans-serif;
+    font-size: clamp(17.6px, 1.29vw, 24.6px); /* original clamp(16px, 1.17vw, 22.4px); */
+    color: white;
+    margin-top: 2vh;
 }
 
 /*---------------------------- start of staff ----------------------------------------------------*/
 
 .staff {
+    background-image: url('staff/staff_bcgr.png');
+    background-size: cover;
     position: relative;
     width: 100%;
     height: 130vh;
     overflow: hidden;
-}
-
-.staff video {   
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
 }
 
 .image_grid {
@@ -407,13 +431,13 @@ body {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 3; /*need3*/
     filter: brightness(0.6);
 }
 
 .content_container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     width: 80%;
     height: 80%;
     text-align: center;
