@@ -25,7 +25,7 @@ body {
     left: 0;
     right: 5vw;
     width: 100%;
-    z-index: 3; /*check if it is visible over staff part*/
+    z-index: 4; /*check if it is visible over staff part*/
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -280,7 +280,7 @@ body {
     background-size: cover;
     position: relative;
     width: 100%;
-    height: 130vh;
+    min-height: 130vh;
     overflow: hidden;
 }
 
@@ -293,6 +293,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 6rem;
+    margin-top: 50vh;
+    margin-bottom: 10vh;
 }
 
 .image_row {
@@ -365,123 +367,110 @@ body {
 /* ------------------------ end of staff ------------------------------- */
 
 /* --------------------------- start of taktik --------------------------*/
+/* Grid Layout */
+
 .taktik_section {
-    padding: 20px;
+    height: 100vh;
+    background-color: #333;
 }
 
-/*flipping taktik s*/
-.card_container .flip_card {
-    perspective: 600px;
-    margin: 0 15px;
+.taktik_container {
+    display: grid;
+    grid-template-columns: 30vw 1fr;
+    height: 100%;
+}
+
+/* Logo Column */
+.logo_wrapper {
     position: relative;
+    bottom: 22.5vh;
 }
 
-.card_container .flip_card:hover {
-    z-index: 10;
-}
-
-.card_container .flip_card_inner {
-    position: relative;
-    height: 30vh;
+.logo_wrapper img {
+    position: absolute;
     width: 100%;
-    transition: transform 1.2s;
-    transform-style: preserve-3d;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(-50%) translateX(-100px); /*check*/
 }
 
-.card_container .flip_card:hover .flip_card_inner {
-    transform: rotateX(180deg) scale(1.8);
+.logo_wrapper img.active {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0); /*check*/
 }
 
-/* Modified hover effects for edge cards */
-.card_container .flip_card:nth-child(3n+1):hover .flip_card_inner {
-    /* First card in row - shift right */
-    transform: rotateX(180deg) scale(1.8) translateX(15%);
-    transform-origin: left center;
+/* Right Column */
+.right_column {
+    position: relative;
+    height: 100%;
 }
 
-.card_container .flip_card:nth-child(3n):hover .flip_card_inner {
-    /* Last card in row - shift left */
-    transform: rotateX(180deg) scale(1.8) translateX(-15%);
-    transform-origin: right center;
-}
-
-.card_container .flip_card:not(:nth-child(3n+1)):not(:nth-child(3n)):hover .flip_card_inner {
-    /* Middle cards - normal scale */
-    transform: rotateX(180deg) scale(1.8);
-    transform-origin: center center;
-}
-
-.card_container .flip_card_front, .card_container .flip_card_back {
+.screen_bg {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10%;
-    overflow: hidden;
-    border: 3px solid rgba(61, 213, 152, 0.8);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 2.3);
+    object-fit: cover;
+    z-index: 3;
 }
 
-.card_container .flip_card_front {
-    background-color: red;
-    z-index: 2;
-}
-
-.card_container .flip_card_back {
-    background-color: red;
-    transform: rotateY(180deg);
+.screenshots {
+    position: relative;
     z-index: 1;
+    height: 35.5%;
+    top: 7.5vh;
+    right: 1vw;
 }
 
-.card_container .flip_card .round_image {
+.screenshots img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border: none;
-    box-shadow: none;
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translate(100px);
 }
 
-/*flipping taktik e*/
-
-.card_container {
-    position: relative; /* works also without; does it on all devices? */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+.screenshots img.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.card {
-    border-radius: 8px;
-    background-color: red;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: transform 1s ease-out;
+.screenshots img.next {
+    transform: translateX(100px);
+}
+.screenshots img.prev {
+    transform: translateX(-100px);
 }
 
-/*.card.scaled {
-    transform: scale(1.5) rotatex(180deg);
-    z-index: 10;
+/* Dots Navigation */
+.dots_container {
+    position: absolute;
+    bottom: 20px;
+    left: 48%;
+    top: 46.3%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 3;
 }
 
-.card:nth-child(3n+1).scaled {
-    transform-origin: left center;
-    transform: scale(1.5) translateX(15%) rotatex(180deg);
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #3DD598;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.card:nth-child(3n).scaled {
-    transform-origin: right center;
-    transform: scale(1.5) translateX(-15%)rotatex(180deg);
-}
-
-.card:not(:nth-child(3n+1)):not(:nth-child(3n)).scaled { -- Middle cards --
-    transform-origin: center center;
-    transform: scale(1.5) rotatex(180deg);
-}*/
-
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.dot.active {
+    background: white;
+    transform: scale(1.2);
 }
 /* -------------------------- end of taktik ---------------------------- */
 /* ------------------------ start of bottom ---------------------------- */
@@ -506,7 +495,7 @@ body {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    z-index: 3; /*need3*/
+    z-index: 4; /*need3*/
     filter: brightness(0.6);
 }
 
@@ -516,7 +505,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+    z-index: 4;
     width: 80%;
     height: 80%;
     text-align: center;
