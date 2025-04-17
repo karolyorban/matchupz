@@ -159,28 +159,13 @@ body {
 
 .sticky_menu .formular_button {    
     border: 3px solid white;
-}
-
-.ball_button {
     position: absolute;
     top: 80vh;
     right: 77.5vw;
 }
 
-.rolling_ball {
-    position: absolute;
-    width: 10vw;
-    right: 2.5vw;
-    top: -1vh;
-    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    pointer-events: none;
-}
-
-.ball_button:hover .rolling_ball{
-    transform: translate(-200%, -50%) rotateZ(360deg);
-}
-
 /* --------------------- HAMBURGER MENU STYLING END ------------------------ */
+/* ------------------------ left part of the header start ------------------ */
 
 .video_header {
     position: relative;
@@ -287,7 +272,7 @@ body {
     color: white;
     margin-top: 2vh;
 }
-
+/*-------------------------------- left part of the header end -----------------------------------*/
 /*---------------------------- start of staff ----------------------------------------------------*/
 
 .staff {
@@ -437,6 +422,10 @@ body {
 
 .content_container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     z-index: 3;
     width: 80%;
     height: 80%;
@@ -476,6 +465,11 @@ body {
     filter: contrast(0.5);
 }
 
+.ball_button {
+    position: absolute;
+    top: 65vh;
+}
+
 .formular_button {
     padding: 1rem 2rem;
     width: 15vw;
@@ -488,11 +482,24 @@ body {
     transition: all 0.3s ease;
     font-weight: bold;
     margin-top: 3rem;
+    align-self: center;
 }
 
 .formular_button:hover {
     background-color: #2fa876;
     transform: scale(1.05);
+}
+
+.rolling_ball {
+    position: absolute;
+    width: 10vw;
+    right: 18%;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    pointer-events: none;
+}
+
+.ball_button:hover .rolling_ball{
+    transform: translate(-550%, -50%) rotateZ(360deg);
 }
 /* ------------------------ end of bottom ------------------------------ */
 /* ------------------------ start of form ------------------------------ */
