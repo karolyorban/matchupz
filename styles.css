@@ -305,7 +305,7 @@ body {
 /*----*/
 /* Flip Card Styles */
 .flip_card {
-    perspective: 1000px;
+    perspective: 300px;
     margin: 0 15px;
     position: relative;
 }
@@ -352,33 +352,6 @@ body {
     box-shadow: none;
 }
 
-/* Adjust the caption positioning */
-.flip_card .image_caption {
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-}
-/*----*/
-
-.image_caption {
-    text-align: center;
-    margin-top: 10px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-.name {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 2px;
-}
-
-.position {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
 .round_image {
     object-fit: cover;
     transition: transform 0.5s ease;
@@ -392,7 +365,124 @@ body {
 /* ------------------------ end of staff ------------------------------- */
 
 /* --------------------------- start of taktik --------------------------*/
+.taktik_section {
+    padding: 20px;
+}
 
+/*flipping taktik s*/
+.card_container .flip_card {
+    perspective: 600px;
+    margin: 0 15px;
+    position: relative;
+}
+
+.card_container .flip_card:hover {
+    z-index: 10;
+}
+
+.card_container .flip_card_inner {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    transition: transform 1.2s;
+    transform-style: preserve-3d;
+}
+
+.card_container .flip_card:hover .flip_card_inner {
+    transform: rotateX(180deg) scale(1.8);
+}
+
+/* Modified hover effects for edge cards */
+.card_container .flip_card:nth-child(3n+1):hover .flip_card_inner {
+    /* First card in row - shift right */
+    transform: rotateX(180deg) scale(1.8) translateX(15%);
+    transform-origin: left center;
+}
+
+.card_container .flip_card:nth-child(3n):hover .flip_card_inner {
+    /* Last card in row - shift left */
+    transform: rotateX(180deg) scale(1.8) translateX(-15%);
+    transform-origin: right center;
+}
+
+.card_container .flip_card:not(:nth-child(3n+1)):not(:nth-child(3n)):hover .flip_card_inner {
+    /* Middle cards - normal scale */
+    transform: rotateX(180deg) scale(1.8);
+    transform-origin: center center;
+}
+
+.card_container .flip_card_front, .card_container .flip_card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10%;
+    overflow: hidden;
+    border: 3px solid rgba(61, 213, 152, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 2.3);
+}
+
+.card_container .flip_card_front {
+    background-color: red;
+    z-index: 2;
+}
+
+.card_container .flip_card_back {
+    background-color: red;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card_container .flip_card .round_image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+}
+
+/*flipping taktik e*/
+
+.card_container {
+    position: relative; /* works also without; does it on all devices? */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.card {
+    border-radius: 8px;
+    background-color: red;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 1s ease-out;
+}
+
+/*.card.scaled {
+    transform: scale(1.5) rotatex(180deg);
+    z-index: 10;
+}
+
+.card:nth-child(3n+1).scaled {
+    transform-origin: left center;
+    transform: scale(1.5) translateX(15%) rotatex(180deg);
+}
+
+.card:nth-child(3n).scaled {
+    transform-origin: right center;
+    transform: scale(1.5) translateX(-15%)rotatex(180deg);
+}
+
+.card:not(:nth-child(3n+1)):not(:nth-child(3n)).scaled { -- Middle cards --
+    transform-origin: center center;
+    transform: scale(1.5) rotatex(180deg);
+}*/
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 /* -------------------------- end of taktik ---------------------------- */
 /* ------------------------ start of bottom ---------------------------- */
 /* Content Section Styles */
@@ -486,7 +576,8 @@ body {
 }
 
 .formular_button:hover {
-    background-color: #2fa876;
+    background-color: white; /*#2fa876 original*/
+    color: #3DD598;
     transform: scale(1.05);
 }
 
