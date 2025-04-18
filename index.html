@@ -10,6 +10,7 @@
         <link rel="icon" type="image/x-icon" href="mix/matchupz_logo.png">
     </head>
 <body>
+    <div class="site-container">
     <!-- hamburger menu -->
     <nav class="hamburger_menu">
         <input id="menu_toggle" type="checkbox" />
@@ -56,6 +57,7 @@
             </div>
         </div>
     </header>
+    
     <main>
     <!-- staff cards -->
         <section class="staff">
@@ -167,7 +169,7 @@
 <section class="taktik_section">
     <div class="taktik_container">
         <!-- Left Column (Logos) -->
-        <div class="taktik_logo_wrapper">
+        <div class="taktik_logo_wrapper">g
             <img src="taktik/logo1.png" alt="Logo 1" class="logo active" data-index="0">
             <img src="taktik/logo2.png" alt="Logo 2" class="logo" data-index="1">
             <img src="taktik/logo3.png" alt="Logo 3" class="logo" data-index="2">
@@ -239,6 +241,7 @@
         </section>
 <!-- end of bottom section with form -->
     </main>
+    </div> <!--end of container for pushiepushie-->
     <footer>
         this is the footer
     </footer>
@@ -273,7 +276,7 @@
                 <label for="message">Magst mit uns etwas mitteilen?</label>
                 <textarea id="message" name="message" rows="4"></textarea>
             </div>
-            <button class="formular_button">
+            <button type="submit" class="formular_button">  <!-- Changed to type="submit" -->
                 Abschicken
             </button> 
         </form>

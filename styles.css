@@ -621,91 +621,66 @@ body {
 /* ------------------------ end of bottom ------------------------------ */
 /* ------------------------ start of form ------------------------------ */
 /* Form Modal Styles */
-.form_modal {
-    display: none;
+
+#matchFormModal {
     position: fixed;
-    z-index: 1000;
-    left: 0;
     top: 0;
-    width: 100%;
+    right: -50%;
+    width: 35% !important;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease-out;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#matchFormModal.show {
+    right: 0;
+}
+
+#matchFormModal .modal_content {
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    backdrop-filter: blur(5px);
+    padding: 20px;
+    box-sizing: border-box;
 }
-  
-.modal_content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 2rem;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    animation: modalopen 1s;
-}
-  
-@keyframes modalopen {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-  
+
 .close_modal {
     position: absolute;
-    right: 25px;
     top: 15px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+    right: 15px;
+    font-size: 24px;
     cursor: pointer;
 }
-  
-.close_modal:hover {
-    color: #39c58d;
+
+body.modal-open {
+    overflow: hidden;
 }
-  
+
+/* Form styling */
 .match_form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 15px;
+    margin-top: 20px;
 }
-  
+
 .form_group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 5px;
 }
-  
+
 .form_group label {
-    font-weight: 600;
-    color: #333;
+    font-weight: bold;
 }
-  
+
 .form_group input,
 .form_group select,
 .form_group textarea {
-    padding: 0.8rem;
+    padding: 8px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-  
-.form_group textarea {
-    resize: vertical;
-}
-  
-.submit_button {
-    background-color: #39c58d;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-  
-.submit_button:hover {
-    background-color: #2fa876;
+    border-radius: 4px;
 }
 /* ------------------------- end of form ------------------------------- */
 
