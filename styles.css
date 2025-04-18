@@ -371,6 +371,7 @@ body {
 /* Grid Layout */
 
 .taktik_section {
+    z-index: 1;
     height: 100vh;
     background-color: #333;
 }
@@ -497,6 +498,79 @@ body {
     background: white;
     transform: scale(1.2);
 }
+
+/*arrow navi*/
+.slide-arrows {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none; /* Allows clicks through empty spaces */
+}
+
+.arrow-container {
+    position: relative;
+    width: 60px; /* Adjust based on your arrow size */
+    height: 60px;
+    cursor: pointer;
+    pointer-events: auto; /* Re-enable clicks */
+    margin: 0 20px;
+    transition: transform 0.2s ease;
+}
+
+.arrow-container:hover {
+    transform: scale(1.1); /* Optional: slight grow effect */
+}
+
+.default-arrow, .hover-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.hover-arrow {
+    opacity: 0;
+}
+
+/* Hover effects */
+.arrow-container:hover .default-arrow {
+    opacity: 0;
+}
+
+.arrow-container:hover .hover-arrow {
+    opacity: 1;
+}
+
+/* Position adjustments */
+.left-arrow {
+    margin-left: 1.5%;
+}
+
+.right-arrow {
+    margin-right: 71.5%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .arrow-container {
+        width: 40px;
+        height: 40px;
+    }
+    .left-arrow {
+        margin-left: 10px;
+    }
+    .right-arrow {
+        margin-right: 10px;
+    }
+}
+/*arrow navi end*/
 /* -------------------------- end of taktik ---------------------------- */
 /* ------------------------- start of kunden --------------------------- */
 .kunden {
