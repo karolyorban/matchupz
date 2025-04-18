@@ -371,9 +371,10 @@ body {
 /* Grid Layout */
 
 .taktik_section {
+    position: relative;
     z-index: 1;
     height: 100vh;
-    background-color: #333;
+    background-color: pink;
 }
 
 .taktik_container {
@@ -501,7 +502,7 @@ body {
 
 /*arrow navi*/
 .slide-arrows {
-    position: relative;
+    position: absolute;
     width: 100%;
     display: flex;
     justify-content: space-between;
