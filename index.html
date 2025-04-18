@@ -167,16 +167,24 @@
 <section class="taktik_section">
     <div class="taktik_container">
         <!-- Left Column (Logos) -->
-        <div class="logo_wrapper">
+        <div class="taktik_logo_wrapper">
             <img src="taktik/logo1.png" alt="Logo 1" class="logo active" data-index="0">
             <img src="taktik/logo2.png" alt="Logo 2" class="logo" data-index="1">
             <img src="taktik/logo3.png" alt="Logo 3" class="logo" data-index="2">
             <img src="taktik/logo4.png" alt="Logo 4" class="logo" data-index="3">
             <img src="taktik/logo5.png" alt="Logo 5" class="logo" data-index="4">
+
+            <div class="dots_container">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+                <div class="dot" data-index="3"></div>
+                <div class="dot" data-index="4"></div>
+            </div>
         </div>
         
         <!-- Right Column (Screenshots + Background) -->
-        <div class="right_column">
+        <div class="taktik_right_column">
             <!-- Background (persistent) -->
             <img src="taktik/screen.png" alt="UI Background" class="screen_bg">
             
@@ -190,20 +198,22 @@
             </div>
             
             <!-- Navigation Dots -->
-            <div class="dots_container">
-                <div class="dot active" data-index="0"></div>
-                <div class="dot" data-index="1"></div>
-                <div class="dot" data-index="2"></div>
-                <div class="dot" data-index="3"></div>
-                <div class="dot" data-index="4"></div>
-            </div>
+            
         </div>
     </div>
 </section>
 <!-- end of taktik -->
 <!-- start of clients -->
-        <section>
-            kunden
+        <section class="kunden">
+            <div class="kunden_backgr">
+                <img src="kunden/kunden_bcgr.png" alt="missing"> <!-- alt missing -->
+            </div>
+            <div class="clients_logo_left" data-x="34.3" data-y="19">
+                <img src="kunden/rapid_wien.png" alt="Rapid Wien">
+            </div>
+            <div class="clients_logo_right" data-x="56" data-y="21">
+                <img src="kunden/admira_wacker.png" alt="">
+            </div>
         </section>
 <!-- end of clients -->
 <!-- start of bottom section with form -->
@@ -271,7 +281,8 @@
 </div>
 <!-- end of popup form -->
 <script src="scripts/form.js"></script>
-<script src="scripts/taktik.js"></script> <!-- not in use at the moment -->
+<script src="scripts/taktik.js"></script>
+<script src="scripts/kunden.js"></script>
 <script src="scripts/topmenu.js"></script>
 </body>
 </html>

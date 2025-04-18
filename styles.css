@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 /* ---------------------   STICKY MENU STYLING ------------------------------ */
 /*here i start*/
@@ -161,7 +162,7 @@ body {
     border: 3px solid white;
     position: absolute;
     top: 80vh;
-    right: 77.5vw;
+    right: 77.5%;
 }
 
 /* --------------------- HAMBURGER MENU STYLING END ------------------------ */
@@ -378,15 +379,18 @@ body {
     display: grid;
     grid-template-columns: 30vw 1fr;
     height: 100%;
+    background: url('mix/left_bckr.jpeg') left / 30vw 100% no-repeat;
 }
 
 /* Logo Column */
-.logo_wrapper {
+.taktik_logo_wrapper {
     position: relative;
-    bottom: 22.5vh;
+    width: 30%;
+    bottom: 27%;
+    left: 34%;
 }
 
-.logo_wrapper img {
+.taktik_logo_wrapper img {
     position: absolute;
     width: 100%;
     height: auto;
@@ -397,13 +401,13 @@ body {
     transform: translateY(-50%) translateX(-100px); /*check*/
 }
 
-.logo_wrapper img.active {
+.taktik_logo_wrapper img.active {
     opacity: 1;
     transform: translateY(-50%) translateX(0); /*check*/
 }
 
 /* Right Column */
-.right_column {
+.taktik_right_column {
     position: relative;
     height: 100%;
 }
@@ -449,9 +453,8 @@ body {
 /* Dots Navigation */
 .dots_container {
     position: absolute;
-    bottom: 20px;
-    left: 48%;
-    top: 46.3%;
+    left: 35%;
+    top: 90%;
     transform: translateX(-50%);
     display: flex;
     gap: 15px;
@@ -473,6 +476,40 @@ body {
     transform: scale(1.2);
 }
 /* -------------------------- end of taktik ---------------------------- */
+/* ------------------------- start of kunden --------------------------- */
+.kunden {
+    position: relative;
+    background-color: #333;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.kunden_backgr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kunden_backgr img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*check how it behaves on different aspect ratios*/
+}
+
+.clients_logo_left, .clients_logo_right {
+    position: absolute;
+    width: 8%;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.clients_logo_left img, .clients_logo_right img {
+    width: 100%;
+    height: auto;
+}
+/* -------------------------- end of kunden ---------------------------- */
 /* ------------------------ start of bottom ---------------------------- */
 /* Content Section Styles */
 .content_section {

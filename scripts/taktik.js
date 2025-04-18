@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.dot');
-    const logos = document.querySelectorAll('.logo_wrapper img');
+    const logos = document.querySelectorAll('.taktik_logo_wrapper img');
     const screenshots = document.querySelectorAll('.screenshots img');
     let currentIndex = 0;
     let isAnimating = false;
