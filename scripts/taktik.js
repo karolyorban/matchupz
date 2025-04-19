@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 screenshot.classList.remove('next', 'prev');
             });
             isAnimating = false;
-        }, 700);
+        }, 100);
     }
 
     // Click handler for dots

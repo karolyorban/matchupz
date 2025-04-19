@@ -19,10 +19,10 @@
         </label>
         <ul class="menu_box">
             <li><a class="menu_item" href="#">Home</a></li>
-            <li><a class="menu_item" href="#">About</a></li>
-            <li><a class="menu_item" href="#">Services</a></li>
-            <li><a class="menu_item" href="#">Contact</a></li>
-            <li><a class="menu_item" href="#">Login</a></li>
+            <li><a class="menu_item" href="#">Team</a></li>
+            <li><a class="menu_item" href="#">So funktioniert's</a></li>
+            <li><a class="menu_item" href="#">Kunden</a></li>
+            <li><a class="menu_item" href="#">Kontakt</a></li>
         </ul>
     </nav>
     <!-- end of hamburger menu -->
@@ -31,15 +31,19 @@
         <img  class="logo_text" src="mix/matchupz_logo_text.png" alt="Matchupz Logo">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Login</a></li>
-        </ul>
+            <li><a href="#staff">Team</a></li>
+            <li><a href="#taktik">So funktioniert's</a></li>
+            <li><a href="#kunden">Kunden</a></li>
+            <li><a href="#anpfiff">Kontakt</a></li>
+        </ul>       
+    </nav>
+
+    <div class="top_button">
         <button class="formular_button">
             Match NOW
-        </button>        
-    </nav>
+        </button>
+    </div>
+     
     <!-- end of open menu-->
     <header class="video_header">
         <video autoplay muted loop playsinline>
@@ -60,7 +64,8 @@
     
     <main>
     <!-- staff cards -->
-        <section class="staff">
+        <section class="staff" id="staff">
+            <div class="caption">#UNSER TEAM</div>
             <div class="image_grid">
                 <div class="image_row">
                     <!-- Stöger -->
@@ -101,18 +106,6 @@
                         </div>
                     </div>
                     <!-- Muhr end -->
-                    <!-- Schnaderbeck -->
-                    <div class="flip_card">
-                        <div class="flip_card_inner">
-                            <div class="flip_card_front">
-                                <img src="staff/schnaderbeck.jfif" alt="Viktoria Schnaderbeck" class="round_image">
-                            </div>
-                            <div class="flip_card_back">
-                                <img src="staff/back02.jpg" alt="Viktoria Schnaderbeck Back" class="round_image">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Schnaderbeck end -->
                     <!-- Monshi start -->
                     <div class="flip_card">
                         <div class="flip_card_inner">
@@ -144,7 +137,7 @@
                                 <img src="staff/budinsky.jpg" alt="Kimberly Budinksy" class="round_image">
                             </div>
                             <div class="flip_card_back">
-                                <img src="staff/back01.jpg" alt="Kimberly Budinksy Back" class="round_image">
+                                <img src="staff/budinsky_back.png" alt="Kimberly Budinksy Back" class="round_image">
                             </div>
                         </div>
                     </div>
@@ -166,105 +159,110 @@
         </section>
 <!-- end of staff cards -->
 <!-- start of taktik -->
-<section class="taktik_section">
-    <div class="slide-arrows">
-        <!-- Left Arrow -->
-        <div class="arrow-container left-arrow" onclick="prevSlide()">
-            <img src="taktik/default_arrow_left.png" class="default-arrow" alt="Previous">
-            <img src="taktik/hover_arrow_left.png" class="hover-arrow" alt="Previous">
-        </div>
-        
-        <!-- Right Arrow -->
-        <div class="arrow-container right-arrow" onclick="nextSlide()">
-            <img src="taktik/default_arrow_right.png" class="default-arrow" alt="Next">
-            <img src="taktik/hover_arrow_right.png" class="hover-arrow" alt="Next">
-        </div>
-    </div>
-    <div class="taktik_container">
-        <!-- Left Column (Logos) -->
-        <div class="taktik_logo_wrapper">
-            <div class="logo active" data-index="0">
-                <p class="taktik_logo_text fett">SCHRITT 1</p>
-                <img src="taktik/logo1.png" alt="Logo 1">
-                <p class="taktik_logo_text">Log dich in dein Club-Portal ein</p>
+        <section class="taktik_section" id="taktik">
+            <div class="caption">#UNSERE TAKTIK</div>
+            <div class="slide-arrows">
+                <!-- Left Arrow -->
+                <div class="arrow-container left-arrow" onclick="prevSlide()">
+                    <img src="taktik/default_arrow_left.png" class="default-arrow" alt="Previous">
+                    <img src="taktik/hover_arrow_left.png" class="hover-arrow" alt="Previous">
+                </div>
+                
+                <!-- Right Arrow -->
+                <div class="arrow-container right-arrow" onclick="nextSlide()">
+                    <img src="taktik/default_arrow_right.png" class="default-arrow" alt="Next">
+                    <img src="taktik/hover_arrow_right.png" class="hover-arrow" alt="Next">
+                </div>
             </div>
-            <div class="logo" data-index="1">
-                <p class="taktik_logo_text fett">SCHRITT 2</p>
-                <img src="taktik/logo2.png" alt="Logo 2">
-                <p class="taktik_logo_text">Erstelle Anforderungsprofile für deine Spieler:innen</p>
-            </div>
-            <div class="logo" data-index="2">
-                <p class="taktik_logo_text fett">SCHRITT 3</p>
-                <img src="taktik/logo3.png" alt="Logo 2">
-                <p class="taktik_logo_text">Sichte deine Matchingergebnisse</p>
-            </div>
-            <div class="logo" data-index="3">
-                <p class="taktik_logo_text fett">SCHRITT 4</p>
-                <img src="taktik/logo4.png" alt="Logo 2">
-                <p class="taktik_logo_text">Unterschiedliche Erwartungen im Detail ansehen</p>
-            </div>
-            <div class="logo" data-index="4">
-                <p class="taktik_logo_text fett">SCHRITT 5</p>
-                <img src="taktik/logo5.png" alt="Logo 2">
-                <p class="taktik_logo_text">Bespreche mit Hilfe unseres Interviewleitfadens die Divergenzen</p>
-            </div>
+            <div class="taktik_container">
+                <!-- Left Column (Logos) -->
+                <div class="taktik_logo_wrapper">
+                    <div class="logo active" data-index="0">
+                        <p class="taktik_logo_text fett">SCHRITT 1</p>
+                        <img src="taktik/logo1.png" alt="Logo 1">
+                        <p class="taktik_logo_text">Log dich in dein Club-Portal ein</p>
+                    </div>
+                    <div class="logo" data-index="1">
+                        <p class="taktik_logo_text fett">SCHRITT 2</p>
+                        <img src="taktik/logo2.png" alt="Logo 2">
+                        <p class="taktik_logo_text">Erstelle Anforderungsprofile für deine Spieler:innen</p>
+                    </div>
+                    <div class="logo" data-index="2">
+                        <p class="taktik_logo_text fett">SCHRITT 3</p>
+                        <img src="taktik/logo3.png" alt="Logo 2">
+                        <p class="taktik_logo_text">Sichte deine Matchingergebnisse</p>
+                    </div>
+                    <div class="logo" data-index="3">
+                        <p class="taktik_logo_text fett">SCHRITT 4</p>
+                        <img src="taktik/logo4.png" alt="Logo 2">
+                        <p class="taktik_logo_text">Unterschiedliche Erwartungen im Detail ansehen</p>
+                    </div>
+                    <div class="logo" data-index="4">
+                        <p class="taktik_logo_text fett">SCHRITT 5</p>
+                        <img src="taktik/logo5.png" alt="Logo 2">
+                        <p class="taktik_logo_text">Bespreche mit Hilfe unseres Interviewleitfadens die Divergenzen</p>
+                    </div>
 
-            <div class="dots_container">
-                <div class="dot active" data-index="0"></div>
-                <div class="dot" data-index="1"></div>
-                <div class="dot" data-index="2"></div>
-                <div class="dot" data-index="3"></div>
-                <div class="dot" data-index="4"></div>
+                    <div class="dots_container">
+                        <div class="dot active" data-index="0"></div>
+                        <div class="dot" data-index="1"></div>
+                        <div class="dot" data-index="2"></div>
+                        <div class="dot" data-index="3"></div>
+                        <div class="dot" data-index="4"></div>
+                    </div>
+                </div>
+                
+                <!-- Right Column (Screenshots + Background) -->
+                <div class="taktik_right_column">
+                    <!-- Background (persistent) -->
+                    <img src="taktik/screen.png" alt="UI Background" class="screen_bg">
+                    
+                    <!-- Screenshots (one active at a time) -->
+                    <div class="screenshots">
+                        <img src="taktik/screen1.png" alt="Screen 1" class="screenshot active" data-index="0">
+                        <img src="taktik/screen2.png" alt="Screen 2" class="screenshot" data-index="1">
+                        <img src="taktik/screen3.png" alt="Screen 3" class="screenshot" data-index="2">
+                        <img src="taktik/screen4.png" alt="Screen 4" class="screenshot" data-index="3">
+                        <img src="taktik/screen5.png" alt="Screen 5" class="screenshot" data-index="4">
+                    </div>
+                    
+                    <!-- Navigation Dots -->
+                    
+                </div>
             </div>
-        </div>
-        
-        <!-- Right Column (Screenshots + Background) -->
-        <div class="taktik_right_column">
-            <!-- Background (persistent) -->
-            <img src="taktik/screen.png" alt="UI Background" class="screen_bg">
-            
-            <!-- Screenshots (one active at a time) -->
-            <div class="screenshots">
-                <img src="taktik/screen1.png" alt="Screen 1" class="screenshot active" data-index="0">
-                <img src="taktik/screen2.png" alt="Screen 2" class="screenshot" data-index="1">
-                <img src="taktik/screen3.png" alt="Screen 3" class="screenshot" data-index="2">
-                <img src="taktik/screen4.png" alt="Screen 4" class="screenshot" data-index="3">
-                <img src="taktik/screen5.png" alt="Screen 5" class="screenshot" data-index="4">
-            </div>
-            
-            <!-- Navigation Dots -->
-            
-        </div>
-    </div>
-</section>
+        </section>
 <!-- end of taktik -->
+
 <!-- start of clients -->
-        <section class="kunden">
+        <section class="kunden" id="kunden">
+            <div class="caption">#UNSERE FANS</div>
             <div class="kunden_backgr">
                 <img src="kunden/kunden_bcgr.png" alt="missing"> <!-- alt missing -->
             </div>
-            <div class="clients_logo_left" data-x="34.3" data-y="19">
+            <div class="clients_logo_left" data-x="34.3" data-y="26.3">
                 <img src="kunden/rapid_wien.png" alt="Rapid Wien">
             </div>
-            <div class="clients_logo_right" data-x="56" data-y="21">
+            <div class="clients_logo_right" data-x="56" data-y="27.3">
                 <img src="kunden/admira_wacker.png" alt="">
             </div>
         </section>
 <!-- end of clients -->
 <!-- start of bottom section with form -->
-        <section class="content_section">
-            <video autoplay loop muted playsinline class="content_video">
-                <source src="bottom/footer_backgr.mp4" type="video/mp4"> <!--still missing-->
-            </video>
+        <section class="content_section" id="anpfiff">
+            <div class="caption">#KONTAKT</div>
+            <div class="anpfiff_backgr">
+                <img src="bottom/anpfiff_bcgr.png" alt="missing"> <!-- alt missing -->
+            </div>
             <div class="content_container">
                 <p class="anpfiff">
-                    Der Anpfiff
+                    Bereit deinen Club aufs nächste Level zu bringen?
                 </p>
                 <div class="logo_container">
-                    <img src="bottom/powered_by.png" alt="Powered by JobTreffer" class="content_logo_powered">
-                    <img src="bottom/logo_with_slogan.png" alt="MatchupZ - Bridging Players and Clubs" class="content_logo_bridging">
+                    <!--<img src="bottom/powered_by.png" alt="Powered by JobTreffer" class="content_logo_powered">
+                    <img src="bottom/logo_with_slogan.png" alt="MatchupZ - Bridging Players and Clubs" class="content_logo_bridging">-->
+                    <img src="bottom/player_card.png" alt="card" class="content_logo">
                 </div>
-                <div class="ball_button">
+                <div class="ball_button" data-x=none data-y="70">
                     <button class="formular_button">
                         Match NOW
                     </button>
@@ -272,12 +270,18 @@
                 </div>
             </div>
         </section>
+        <section class="section_breaker">
+            <div class="breaker_container">
+                <img src="mix/messi.png" alt="divider">
+                <div class="quote">
+                    <p class="divider_quote">"Talent gewinnt Spiele, aber Teamwork und Intelligenz gewinnen Meisterschaften."</p>
+                    <p class="divider_author"> - Lionel Messi</p>
+                </div>
+            </div>
+        </section>
 <!-- end of bottom section with form -->
     </main>
     </div> <!--end of container for pushiepushie-->
-    <footer>
-        this is the footer
-    </footer>
 <!-- start of popup form -->
 <div class="form_modal" id="matchFormModal">
     <div class="modal_content">

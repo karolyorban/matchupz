@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
@@ -26,14 +30,12 @@ body {
     left: 0;
     right: 5vw;
     width: 100%;
-    z-index: 4; /*check if it is visible over staff part*/
+    z-index: 9; /*check if it is visible over staff part*/
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0;
 }
-
-
 
 .sticky_menu::before {
     content: "";
@@ -76,6 +78,30 @@ body {
 
 .sticky_menu a:hover {
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+.top_button {
+    position: fixed;
+    top: 80vh;
+    right: 77.5%;
+    z-index: 6;
+}
+
+.top_button .formular_button {
+    padding: 1rem 2rem;
+    width: 15vw;
+    height: auto;
+    font-size: 1.1rem;
+    background-color: #39c58d;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 3rem;
+    align-self: center;
+    border: 3px solid white;
 }
 /* --------------------- STICKY MENU STYLING END ---------------------------- */
 /* --------------------- HAMBURGER MENU STYLING ----------------------------- */
@@ -156,13 +182,6 @@ body {
 .menu_item:hover {
     background-color: #39c58d;
     color: white;
-}
-
-.sticky_menu .formular_button {    
-    border: 3px solid white;
-    position: absolute;
-    top: 80vh;
-    right: 77.5%;
 }
 
 /* --------------------- HAMBURGER MENU STYLING END ------------------------ */
@@ -274,6 +293,25 @@ body {
     margin-top: 2vh;
 }
 /*-------------------------------- left part of the header end -----------------------------------*/
+/*captions*/
+.caption {
+    color: white;
+    position: absolute;
+    top: 3%;
+    left: 3.5%;
+    font-size: 3.8rem;
+    z-index: 5;
+}
+
+.staff .caption {
+    top: 11%;
+    left: 34%;
+}
+
+.content_section .caption {
+    z-index: 8;
+}
+/*captions end*/
 /*---------------------------- start of staff ----------------------------------------------------*/
 
 .staff {
@@ -364,6 +402,15 @@ body {
     transform: scale(1.05);
 }
 
+.flip_card {
+    transition: filter 0.4s ease, transform 0.4s ease; /* Smooth transitions for hover effects */
+}
+
+.flip_card:hover ~ .flip_card,                /* Cards AFTER the hovered one */
+.flip_card:has(~ .flip_card:hover),           /* Cards BEFORE the hovered one */
+.image_grid:has(.flip_card:hover) .flip_card:not(:hover) {  /* Cards in OTHER ROWS */
+  filter: grayscale(100%) brightness(0.7);
+}
 
 /* ------------------------ end of staff ------------------------------- */
 
@@ -573,12 +620,51 @@ body {
 }
 /*arrow navi end*/
 /* -------------------------- end of taktik ---------------------------- */
+/*breaker*/
+
+.section_breaker {
+    position: relative;
+    z-index: 6;
+    width: 100%;
+    height: 20vh;
+    background: url('mix/section_divider.png') center/cover no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.breaker_container {
+    margin-left: 3vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section_breaker img {
+    height: 18vh;
+}
+
+.section_breaker p {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10vw;
+}
+
+.divider_quote {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.divider_author {
+    font-size: 1.8rem;
+}
+
+/*breaker end/*
 /* ------------------------- start of kunden --------------------------- */
 .kunden {
     position: relative;
     background-color: #333;
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     overflow: hidden;
 }
 
@@ -612,7 +698,7 @@ body {
 .content_section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -620,7 +706,22 @@ body {
     color: white;
 }
 
-.content_video {
+.anpfiff_backgr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+}
+
+.anpfiff_backgr img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*check how it behaves on different aspect ratios*/
+}
+
+/*.content_video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -629,31 +730,32 @@ body {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    z-index: 4; /*need3*/
+    z-index: 7;
     filter: brightness(0.6);
-}
+}*/
 
 .content_container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    z-index: 4;
-    width: 80%;
-    height: 80%;
+    
+    z-index: 8;
+    width: 60%;
+    height: 70%;
     text-align: center;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.6);
+    /*background-color: rgba(0, 0, 0, 0.6);*/
     border-radius: 20px;
-    backdrop-filter: blur(5px);
+    /*backdrop-filter: blur(5px);*/
 }
 
 .anpfiff {
     font-size: 4rem;
     line-height: 1.6;
+    font-weight: bold;
     margin-bottom: none;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logo_container {
@@ -666,35 +768,44 @@ body {
     flex-wrap: wrap;
 }
 
-.content_logo_powered {
+.content_logo {
+    height: 40vh;
+    width: auto;
+}
+
+/*.content_logo_powered {
     height: 20vh;
     width: auto;
     filter: contrast(1.5);
-}
+}*/
 
-.content_logo_bridging {
+/*.content_logo_bridging {
     height: 20vh;
     width: auto;
     filter: contrast(0.5);
-}
+}*/
 
 .ball_button {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 65vh;
+    margin-top: 8vh;
 }
 
 .formular_button {
     padding: 1rem 2rem;
-    width: 15vw;
+    width: 7.5vw;
+    height: 7.5vw;
     font-size: 1.1rem;
     background-color: #39c58d;
     color: white;
     border: none;
-    border-radius: 15px;
+    border-radius: 100px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
-    margin-top: 3rem;
     align-self: center;
 }
 
@@ -706,14 +817,16 @@ body {
 
 .rolling_ball {
     position: absolute;
-    width: 10vw;
-    right: 18%;
+    width: 10.5vw;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     pointer-events: none;
 }
 
 .ball_button:hover .rolling_ball{
-    transform: translate(-550%, -50%) rotateZ(360deg);
+    transform: translate(-650%, -50%) rotateZ(360deg);
 }
 /* ------------------------ end of bottom ------------------------------ */
 /* ------------------------ start of form ------------------------------ */
