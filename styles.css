@@ -720,10 +720,10 @@ body {
 /* ------------------------ start of bottom ---------------------------- */
 /* Content Section Styles */
 .content_section {
-    width: 100%;
-    height: 0;
-    padding-bottom: 61%; /* (884/1536)*100 */
     position: relative;
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 61%; /* (884/1536)*100 */
     overflow: visible; /* Allows content to extend beyond viewport */
     margin: 0 auto; /* Centers if narrower than viewport */
     background-color: #333; /* Fallback color */
@@ -915,6 +915,44 @@ body {
 .ball_button:hover .rolling_ball{
     transform: translate(-850%, -50%) rotateZ(360deg);
 }
+
+.floating-sidebar {
+    position: absolute;    
+    left: 6%;
+    top: 40%;
+    width: 23%;
+    padding: 1vw;
+    pointer-events: none;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px; /* Space between icon and text */
+    margin-bottom: 15px; /* Space between items */
+    pointer-events: auto; /* Allows clicks on these elements */
+}
+
+.sidebar-item img {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+    transition: transform 0.3s ease; /* For hover animations later */
+}
+
+.sidebar-item p {
+    margin: 0;
+    color: white; /* Adjust color as needed */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
 /* ------------------------ end of bottom ------------------------------ */
 /* ------------------------ start of form ------------------------------ */
 /* Form Modal Styles */
