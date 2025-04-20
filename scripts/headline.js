@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'staff': '#UNSER TEAM',
         'taktik': '#UNSERE TAKTIK',
         'kunden': '#UNSERE FANS',
-        'anpfiff': '#KONTAKT'
+        'anpfiff': '#DER ANPFIFF'
     };
 
     // Track active section on scroll
