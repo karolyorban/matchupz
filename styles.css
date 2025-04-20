@@ -919,13 +919,15 @@ body {
 .floating-sidebar {
     position: absolute;    
     left: 6%;
-    top: 40%;
+    top: 33%;
     width: 23%;
     padding: 1vw;
+    justify-content: center;
+    align-items: center;
     pointer-events: none;
     border: none;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: grey;
     box-sizing: border-box;
     min-height: fit-content;
 }
@@ -933,8 +935,8 @@ body {
 .sidebar-item {
     display: flex;
     align-items: flex-start;
-    gap: 10px; /* Space between icon and text */
-    margin-bottom: 15px; /* Space between items */
+    gap: 1vw; /* Space between icon and text */
+    margin-bottom: 0.5rem; /* Space between items */
     pointer-events: auto; /* Allows clicks on these elements */
 }
 
@@ -948,7 +950,7 @@ body {
     margin: 0;
     color: white; /* Adjust color as needed */
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
