@@ -13,6 +13,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 12vh;
 }
 
 body {
@@ -20,6 +21,14 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+.green_text {
+    background-color: #3DD598;
+    padding: 0 1%;
+    border: none;
+    border-radius: 3px;
+    font-size: 3rem;
 }
 /* ---------------------   STICKY MENU STYLING ------------------------------ */
 /*here i start*/
@@ -294,22 +303,26 @@ body {
 }
 /*-------------------------------- left part of the header end -----------------------------------*/
 /*captions*/
-.caption {
-    color: white;
+.section_title_container {
     position: absolute;
-    top: 3%;
-    left: 3.5%;
-    font-size: 3.8rem;
-    z-index: 5;
+    left: 40%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 30%;
+    text-align: center;
 }
 
-.staff .caption {
-    top: 11%;
-    left: 34%;
+.active_section_title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.content_section .caption {
-    z-index: 8;
+.sticky_menu.scrolled .active_section_title {
+    opacity: 1; /* Show title only when menu is in "scrolled" state */
 }
 /*captions end*/
 /*---------------------------- start of staff ----------------------------------------------------*/
@@ -420,8 +433,8 @@ body {
 .taktik_section {
     position: relative;
     z-index: 1;
-    height: 100vh;
-    background-color: pink;
+    height: 120vh;
+    background-color: white;
 }
 
 .taktik_container {
@@ -494,9 +507,9 @@ body {
 .screenshots {
     position: relative;
     z-index: 1;
-    height: 35.5%;
-    top: 7.5vh;
-    right: 1vw;
+    height: 42%;
+    top: 0;
+    right:2%;
 }
 
 .screenshots img {
@@ -661,11 +674,13 @@ body {
 /*breaker end/*
 /* ------------------------- start of kunden --------------------------- */
 .kunden {
-    position: relative;
-    background-color: #333;
     width: 100%;
-    height: 130vh;
-    overflow: hidden;
+    height: 0;
+    padding-bottom: 57.55%; /* (884/1536)*100 */
+    position: relative;
+    overflow: visible; /* Allows content to extend beyond viewport */
+    margin: 0 auto; /* Centers if narrower than viewport */
+    background-color: #333; /* Fallback color */
 }
 
 .kunden_backgr {
@@ -677,14 +692,23 @@ body {
 }
 
 .kunden_backgr img {
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover; /*check how it behaves on different aspect ratios*/
 }
 
-.clients_logo_left, .clients_logo_right {
+.clients_logo_right {
     position: absolute;
     width: 8%;
+    top: 23.5%;
+    right: 36%;
+}
+
+.clients_logo_left {
+    position: absolute;
+    width: 8%;
+    top: 23.5%;
+    right: 57.5%;
     /*transform: translate(-50%, -50%);*/
 }
 
@@ -696,12 +720,14 @@ body {
 /* ------------------------ start of bottom ---------------------------- */
 /* Content Section Styles */
 .content_section {
-    position: relative;
     width: 100%;
-    height: 130vh;
-    overflow: hidden;
+    height: 0;
+    padding-bottom: 61%; /* (884/1536)*100 */
+    position: relative;
+    overflow: visible; /* Allows content to extend beyond viewport */
+    margin: 0 auto; /* Centers if narrower than viewport */
+    background-color: #333; /* Fallback color */
     display: flex;
-    align-items: center;
     justify-content: center;
     color: white;
 }
@@ -712,7 +738,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 7;
 }
 
 .anpfiff_backgr img {
@@ -735,11 +760,11 @@ body {
 }*/
 
 .content_container {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    top: 5%;
     z-index: 8;
     width: 60%;
     height: 70%;
@@ -790,14 +815,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 65vh;
+    top: 100%;
+    right: 45.8%;
     margin-top: 8vh;
 }
 
 .formular_button {
     padding: 1rem 2rem;
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 5.5vw;
+    height: 5.5vw;
     font-size: 1.1rem;
     background-color: #39c58d;
     color: white;
@@ -807,6 +833,9 @@ body {
     transition: all 0.3s ease;
     font-weight: bold;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .formular_button:hover {
@@ -817,7 +846,7 @@ body {
 
 .rolling_ball {
     position: absolute;
-    width: 10.5vw;
+    width: 7.5vw;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -826,7 +855,7 @@ body {
 }
 
 .ball_button:hover .rolling_ball{
-    transform: translate(-650%, -50%) rotateZ(360deg);
+    transform: translate(-850%, -50%) rotateZ(360deg);
 }
 /* ------------------------ end of bottom ------------------------------ */
 /* ------------------------ start of form ------------------------------ */

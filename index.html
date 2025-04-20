@@ -29,6 +29,9 @@
     <!-- start of open menu-->
     <nav class="sticky_menu">
         <img  class="logo_text" src="mix/matchupz_logo_text.png" alt="Matchupz Logo">
+        <div class="section_title_container">
+            <span class="active_section_title"></span> <!-- Section titles -->
+        </div>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#staff">Team</a></li>
@@ -65,7 +68,6 @@
     <main>
     <!-- staff cards -->
         <section class="staff" id="staff">
-            <div class="caption">#UNSER TEAM</div>
             <div class="image_grid">
                 <div class="image_row">
                     <!-- Stöger -->
@@ -160,7 +162,6 @@
 <!-- end of staff cards -->
 <!-- start of taktik -->
         <section class="taktik_section" id="taktik">
-            <div class="caption">#UNSERE TAKTIK</div>
             <div class="slide-arrows">
                 <!-- Left Arrow -->
                 <div class="arrow-container left-arrow" onclick="prevSlide()">
@@ -235,34 +236,32 @@
 
 <!-- start of clients -->
         <section class="kunden" id="kunden">
-            <div class="caption">#UNSERE FANS</div>
             <div class="kunden_backgr">
                 <img src="kunden/kunden_bcgr.png" alt="missing"> <!-- alt missing -->
             </div>
-            <div class="clients_logo_left" data-x="34.3" data-y="26.3">
+            <div class="clients_logo_left">
                 <img src="kunden/rapid_wien.png" alt="Rapid Wien">
             </div>
-            <div class="clients_logo_right" data-x="56" data-y="27.3">
+            <div class="clients_logo_right">
                 <img src="kunden/admira_wacker.png" alt="">
             </div>
         </section>
 <!-- end of clients -->
 <!-- start of bottom section with form -->
         <section class="content_section" id="anpfiff">
-            <div class="caption">#KONTAKT</div>
             <div class="anpfiff_backgr">
                 <img src="bottom/anpfiff_bcgr.png" alt="missing"> <!-- alt missing -->
             </div>
             <div class="content_container">
                 <p class="anpfiff">
-                    Bereit deinen Club aufs nächste Level zu bringen?
+                    Bereit deinen Club aufs nächste <span class="green_text">LEVEL</span> zu bringen?
                 </p>
                 <div class="logo_container">
                     <!--<img src="bottom/powered_by.png" alt="Powered by JobTreffer" class="content_logo_powered">
                     <img src="bottom/logo_with_slogan.png" alt="MatchupZ - Bridging Players and Clubs" class="content_logo_bridging">-->
                     <img src="bottom/player_card.png" alt="card" class="content_logo">
                 </div>
-                <div class="ball_button" data-x=none data-y="70">
+                <div class="ball_button">
                     <button class="formular_button">
                         Match NOW
                     </button>
@@ -324,5 +323,6 @@
 <script src="scripts/taktik.js"></script>
 <script src="scripts/kunden.js"></script>
 <script src="scripts/topmenu.js"></script>
+<script src="scripts/headline.js"></script>
 </body>
 </html>

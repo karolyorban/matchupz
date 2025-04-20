@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const rightArrow = document.querySelector('.right-arrow');
     let currentIndex = 0;
     let isAnimating = false;
-    let autoRotate;
+    //let autoRotate;
 
     function switchContent(index) {
         if (isAnimating || currentIndex === index) return;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dot.addEventListener('click', function() {
             const index = parseInt(this.dataset.index);
             switchContent(index);
-            resetAutoRotate();
+            //resetAutoRotate();
         });
     });
 
@@ -58,13 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     leftArrow.addEventListener('click', function() {
         const prevIndex = (currentIndex - 1 + dots.length) % dots.length;
         switchContent(prevIndex);
-        resetAutoRotate();
+        //resetAutoRotate();
     });
 
     rightArrow.addEventListener('click', function() {
         const nextIndex = (currentIndex + 1) % dots.length;
         switchContent(nextIndex);
-        resetAutoRotate();
+        //resetAutoRotate();
     });
 
     // Keyboard navigation
@@ -72,32 +72,32 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'ArrowLeft') {
             const prevIndex = (currentIndex - 1 + dots.length) % dots.length;
             switchContent(prevIndex);
-            resetAutoRotate();
+            //resetAutoRotate();
         } else if (e.key === 'ArrowRight') {
             const nextIndex = (currentIndex + 1) % dots.length;
             switchContent(nextIndex);
-            resetAutoRotate();
+            //resetAutoRotate();
         }
     });
 
     // Auto-rotation control
-    function startAutoRotate() {
+    /*function startAutoRotate() {
         autoRotate = setInterval(() => {
             const nextIndex = (currentIndex + 1) % dots.length;
             switchContent(nextIndex);
         }, 5000);
-    }
+    }*/
 
-    function resetAutoRotate() {
+    /*function resetAutoRotate() {
         clearInterval(autoRotate);
         startAutoRotate();
-    }
+    }*/
 
     // Initialize auto-rotation
-    startAutoRotate();
+    //startAutoRotate();
 
     // Pause on hover
     const taktikSection = document.querySelector('.taktik_section');
-    taktikSection.addEventListener('mouseenter', () => clearInterval(autoRotate));
-    taktikSection.addEventListener('mouseleave', startAutoRotate);
+    //taktikSection.addEventListener('mouseenter', () => clearInterval(autoRotate));
+    //taktikSection.addEventListener('mouseleave', startAutoRotate);
 });
