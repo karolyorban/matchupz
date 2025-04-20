@@ -730,6 +730,7 @@ body {
     display: flex;
     justify-content: center;
     color: white;
+    z-index: 7;
 }
 
 .anpfiff_backgr {
@@ -791,11 +792,15 @@ body {
     margin-bottom: 2rem;
     margin-top: 4rem;
     flex-wrap: wrap;
+    perspective: 90px; /*check for values between 300-800*/
 }
 
 .content_logo {
     height: 40vh;
     width: auto;
+    transition: transform 0.2s ease;
+    will-change: transform;
+    transform-style: preserve-3d;
 }
 
 /*.content_logo_powered {
