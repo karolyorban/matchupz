@@ -21,13 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
             sectionTitle.textContent = ''; // Clear title when at top
         }
         
-        // New: Find which section is in view
+        // New: Find which section is in view with stricter conditions
         const sections = document.querySelectorAll('section[id]');
         let activeSection = null;
+        const triggerOffset = window.innerHeight * 0.15; // Only trigger when section reaches 30% of viewport
         
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            // Only consider section active when its top is above 30% of viewport
+            // and its bottom is still visible
+            if (rect.top <= triggerOffset && rect.bottom >= triggerOffset) {
                 activeSection = section.id;
             }
         });
@@ -35,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the displayed title
         if (activeSection && sectionTitles[activeSection]) {
             sectionTitle.textContent = sectionTitles[activeSection];
+        } else if (!activeSection) {
+            sectionTitle.textContent = ''; // Clear if no section is active
         }
     }
     

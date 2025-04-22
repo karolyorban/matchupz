@@ -1,43 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function positionLogos() {
-        const bgImg = document.querySelector('.kunden_backgr img');
-        const logos = document.querySelectorAll('[data-x][data-y]');
-        
-        if (!bgImg.complete) {
-            bgImg.onload = positionLogos;
-            return;
-        }
-
-        const bgNaturalWidth = bgImg.naturalWidth;
-        const bgNaturalHeight = bgImg.naturalHeight;
-        const bgAspect = bgNaturalWidth / bgNaturalHeight;
-        const viewportAspect = window.innerWidth / window.innerHeight;
-
-        logos.forEach(logo => {
-            const xPercent = parseFloat(logo.dataset.x);
-            const yPercent = parseFloat(logo.dataset.y);
-            
-            // Convert image coordinates to viewport coordinates
-            if (viewportAspect > bgAspect) {
-                // Wider viewport: image is cropped vertically
-                const visibleHeight = window.innerWidth / bgAspect;
-                const verticalCrop = (visibleHeight - window.innerHeight) / 2;
-                const yPos = (yPercent / 100) * visibleHeight - verticalCrop;
-                
-                logo.style.left = `${xPercent}%`;
-                logo.style.top = `${(yPos / window.innerHeight) * 100}%`;
-            } else {
-                // Taller viewport: image is cropped horizontally
-                const visibleWidth = window.innerHeight * bgAspect;
-                const horizontalCrop = (visibleWidth - window.innerWidth) / 2;
-                const xPos = (xPercent / 100) * visibleWidth - horizontalCrop;
-                
-                logo.style.left = `${(xPos / window.innerWidth) * 100}%`;
-                logo.style.top = `${yPercent}%`;
-            }
-        });
+    const leftLogo = document.querySelector('.clients_logo_left img');
+    const rightLogo = document.querySelector('.clients_logo_right img');
+    const logoBasePath = 'kunden/';
+    const logoCount = 6; // Adjust to match your number of logos (logo1.png, logo2.png...)
+  
+    function getRandomLogo() {
+      const randomNum = Math.floor(Math.random() * logoCount) + 1;
+      return `${logoBasePath}logo${randomNum}.png`;
     }
-
-    positionLogos();
-    window.addEventListener('resize', positionLogos);
-});
+  
+    function updateLogos() {
+        leftLogo.classList.add('hidden');
+        rightLogo.classList.add('hidden');
+        
+        setTimeout(() => {
+          leftLogo.src = getRandomLogo();
+          rightLogo.src = getRandomLogo();
+          leftLogo.classList.remove('hidden');
+          rightLogo.classList.remove('hidden');
+        }, 500); // Match this delay to the CSS transition time
+      }
+  
+    // Change logos every 3 seconds (adjust interval as needed)
+    setInterval(updateLogos, 3000);
+  });
