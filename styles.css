@@ -1030,9 +1030,9 @@ body {
 }
 
 @keyframes wobble {
-  0%, 100% { transform: translate(-50%, -50%) rotateZ(0deg); }
-  25% { transform: translate(-50%, -50%) rotateZ(-5deg); }
-  75% { transform: translate(-50%, -50%) rotateZ(5deg); }
+    0% { transform: translate(-50%, -50%) rotateZ(-15deg); }
+    50% { transform: translate(-50%, -50%) rotateZ(15deg); }
+    100% { transform: translate(-50%, -50%) rotateZ(-15deg); }
 }
 
 .floating-sidebar {
