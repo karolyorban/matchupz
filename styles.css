@@ -91,7 +91,7 @@ body {
 
 .top_button {
     position: fixed;
-    top: 80vh;
+    top: 82vh;
     right: 77.5%;
     z-index: 6;
 }
@@ -238,6 +238,7 @@ body {
     display: flex;
     align-items: center;
     padding-left: 0;
+    padding-bottom: 3vh;
     margin: 0;
     justify-content: center;
 }
@@ -285,7 +286,7 @@ body {
     width: 100%;
     max-width: 100%;
     font-family: 'montserrat', sans-serif;
-    font-size: clamp(19.2px, 2.08vw, 40px);
+    font-size: clamp(19.2px, 1.9vw, 40px);
     font-weight: bold;
     color: white;
     margin-top: 1vh;
@@ -296,7 +297,7 @@ body {
     width: 100%;
     max-width: 100%;
     font-family: 'montserrat', sans-serif;
-    font-size: clamp(17.6px, 1.29vw, 24.6px); /* original clamp(16px, 1.17vw, 22.4px); */
+    font-size: clamp(17.6px, 1.16vw, 24.6px); /* original clamp(16px, 1.17vw, 22.4px); */
     color: white;
     margin-top: 2vh;
 }
@@ -344,7 +345,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 6rem;
-    margin-top: 50vh;
+    margin-top: 30vh;
     margin-bottom: 10vh;
 }
 
@@ -1201,7 +1202,7 @@ footer {
     position: absolute;
     height: 102%;
     width: 102%;
-    background-image: conic-gradient(from var(--angle), transparent 20%, #3DD598);
+    background-image: conic-gradient(from var(--angle), transparent 80%, #3DD598);
     top: 50%;
     left: 50%;
     translate: -50% -50%;
