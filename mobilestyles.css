@@ -1,0 +1,364 @@
+/* Mobile CSS - For screens up to 768px width */
+@media (max-width: 768px) {
+    /* Base adjustments */
+    html {
+        scroll-padding-top: 8vh; /* Reduced for mobile */
+        overflow-x: hidden;
+    }
+    
+    /* Font size adjustments */
+    .green_text {
+        font-size: 2rem; /* Smaller on mobile */
+    }
+    
+    /* --------------------- STICKY MENU MOBILE STYLING -------------------- */
+    .sticky_menu {
+        height: auto; /* Flexible height */
+        padding: 0.5rem 5%;
+        justify-content: center;
+        overflow: visible; /* Allow menu to expand */
+        background: rgba(61, 213, 152, 0.95) !important; /* Solid background */
+      }
+    
+      /* ----- Menu Items Container ----- */
+      .sticky_menu ul {
+        display: flex !important;
+        flex-wrap: wrap; /* Allow items to stack */
+        justify-content: center;
+        gap: 0.3rem; /* Reduced gap between items */
+        padding: 0;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+    
+      /* ----- Individual Menu Items ----- */
+      .sticky_menu li {
+        margin: 0 !important;
+        flex: 0 0 auto; /* Don't grow or shrink */
+      }
+    
+      /* ----- Menu Links ----- */
+      .sticky_menu a {
+        font-size: 0.85rem !important;
+        padding: 0.4rem 0.8rem !important;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px !important;
+        display: flex;
+        align-items: center;
+      }
+    
+      /* ----- Logo Fix ----- */
+      .sticky_menu .logo_text {
+        display: block !important; /* Force show logo */
+        position: static !important; /* Remove fixed positioning */
+        width: 40px !important; /* Smaller logo */
+        height: auto;
+        margin-right: 0.5rem; /* Space between logo and first item */
+        transform: none !important;
+      }
+    
+      /* ----- Scrolled State Adjustments ----- */
+      .sticky_menu.scrolled::before {
+        opacity: 0; /* Hide duplicate background */
+      }
+    
+    /* Hamburger menu activation */
+   
+    
+    /* --------------------- HEADER MOBILE STYLING ------------------------- */
+    .video_header {
+        height: 110vh;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      /* ----- Header Content (Left Text) ----- */
+      .header_content {
+        position: relative;
+        width: 100% !important;
+        height: 70vh; /* Adjust as needed */
+        padding: 2rem;
+        justify-content: center;
+      }
+    
+      .header_text {
+        width: 100% !important;
+        border-radius: 0 !important;
+        padding: 6rem 2rem 2rem 2rem !important;
+        background: rgba(61, 213, 152, 0.9) !important; /* Solid color for readability */
+        backdrop-filter: none !important;
+      }
+    
+      /* ----- Header Logos (Right Section) ----- */
+      .header_logos {
+        top: 70vh !important;
+        right: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 40vh; /* Adjust as needed */
+        flex-direction: column; /* Side-by-side logos */
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+    
+      /* ----- Individual Logos ----- */
+      .header_logo_1, 
+      .header_logo_2 {
+        width: 40% !important;
+        max-width: 200px;
+        padding-top: 0 !important;
+        height: auto;
+        align-self: center;
+      }
+    
+      /* ----- Text Elements ----- */
+      .logo_text_subtext {
+        font-size: 1.5rem !important;
+        text-align: center;
+      }
+    
+      .slogan_subtext {
+        font-size: 1.1rem !important;
+        text-align: center;
+        margin-top: 1rem !important;
+      }
+    
+    /* --------------------- STAFF MOBILE STYLING ------------------------- */
+    .staff {
+        min-height: auto;
+        padding-bottom: 5rem;
+    }
+    
+    .image_grid {
+        margin-top: 15vh;
+        gap: 3rem;
+    }
+    
+    .image_row {
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flip_card {
+        margin: 0.5rem 0;
+    }
+    
+    .flip_card_inner {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .card_info {
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        top: 20px;
+        width: 80vw;
+        margin: 0 auto;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .flip_card:hover .flip_card_inner {
+        transform: rotateY(180deg) scale(1.1); /* Smaller scale */
+    }
+    
+    /* --------------------- TAKTIK MOBILE STYLING ------------------------ */
+    .taktik_section {
+        height: auto;
+        padding-bottom: 3rem;
+    }
+    
+    .taktik_container {
+        grid-template-columns: 1fr;
+        background: none;
+    }
+    
+    .taktik_logo_wrapper {
+        position: relative;
+        width: 100%;
+        bottom: auto;
+        left: auto;
+        padding: 2rem;
+        background: url('mix/left_bckr.jpeg') center/cover no-repeat;
+    }
+    
+    .taktik_logo_text {
+        padding: 1rem 0;
+        font-size: 1.3rem;
+    }
+    
+    .fett {
+        font-size: 1.6rem;
+    }
+    
+    .screenshots {
+        width: 90%;
+        height: 30vh;
+        top: 1rem;
+        margin-bottom: 4rem;
+    }
+    
+    .dots_container {
+        top: 85%;
+    }
+    
+    /* Arrow navigation adjustments */
+    .slide-arrows {
+        top: 30%;
+    }
+    
+    .right-arrow {
+        margin-right: 10px;
+    }
+    
+    /* --------------------- SECTION BREAKER MOBILE ----------------------- */
+    .section_breaker {
+        height: auto;
+        padding: 2rem 0;
+        flex-direction: column;
+    }
+    
+    .left_group {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+    
+    .bottom_logo, .social_icons {
+        height: auto;
+    }
+    
+    .social_icons img {
+        height: 5vh;
+    }
+    
+    .nav_links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1rem 0;
+        gap: 1rem;
+    }
+    
+    .messi_icon {
+        display: none;
+    }
+    
+    .quote {
+        text-align: center;
+        margin: 1rem;
+    }
+    
+    .divider_quote {
+        font-size: 1.2rem;
+    }
+    
+    .divider_author {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    /* --------------------- KUNDEN MOBILE STYLING ------------------------ */
+    .kunden {
+        padding-bottom: 100vh; /* Taller section */
+    }
+    
+    .clients_logo_right, .clients_logo_left {
+        width: 20%;
+        top: 15%;
+    }
+    
+    .clients_logo_left {
+        right: 70%;
+    }
+    
+    .clients_logo_right {
+        right: 10%;
+    }
+    
+    /* --------------------- BOTTOM SECTION MOBILE ------------------------ */
+    .content_section {
+        height: auto;
+        padding-bottom: 100vh;
+    }
+    
+    .content_container {
+        width: 90%;
+        top: 10%;
+    }
+    
+    .anpfiff {
+        font-size: 2.5rem;
+    }
+    
+    .content_logo {
+        height: 25vh;
+    }
+    
+    .floating-sidebar {
+        position: relative;
+        width: 90%;
+        left: auto;
+        top: auto;
+        margin: 2rem auto;
+        pointer-events: auto;
+    }
+    
+    .sidebar-item p {
+        font-size: 1.1rem;
+    }
+    
+    .ball_button {
+        right: 50%;
+        transform: translateX(50%);
+        margin-top: 3rem;
+    }
+    
+    .formular_button {
+        width: 15vw;
+        height: 15vw;
+    }
+    
+    /* --------------------- FORM MODAL MOBILE ---------------------------- */
+    #matchFormModal {
+        width: 85% !important;
+    }
+    
+    /* --------------------- FOOTER ADJUSTMENTS -------------------------- */
+    .logo_container {
+        height: 30vh;
+    }
+    
+    /* Top button adjustments */
+    .top_button {
+        left: 29vw;
+        top: 64%;
+        width: 40vw;
+        height: 10vh;
+    }
+    
+    .top_button .formular_button {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* General button adjustments */
+    .formular_button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    /* Hide some decorative elements for performance */
+    .card_composite::after, 
+    .card_composite::before {
+        display: none;
+    }
+}
