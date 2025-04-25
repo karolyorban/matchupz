@@ -70,7 +70,7 @@
     /* Sticky menu styling can be removed before deployment*/
 
     .hamburger_menu {
-        z-index: 4; /*styling's in the main css; only z-index changing for mobiles*/
+        z-index: 40; /*styling's in the main css; only z-index changing for mobiles*/
     }
    
     
@@ -175,38 +175,107 @@
     
     .image_grid {
         margin-top: 15vh;
-        gap: 3rem;
+        gap: 2rem; /* Reduced from 6rem */
+        padding-bottom: 2rem;
     }
-    
+
+    /* Staff Card Container */
     .image_row {
-        gap: 2rem;
         flex-direction: column;
+        gap: 1rem; /* Reduced from 4rem */
         align-items: center;
     }
-    
+
+    /* Individual Flip Card */
     .flip_card {
-        margin: 0.5rem 0;
+        perspective: 300px;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        transform-style: preserve-3d;
+        width: 180px;
     }
-    
+
+    /* Card Inner Container */
     .flip_card_inner {
+        position: relative;
         width: 180px;
         height: 180px;
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform-style: preserve-3d;
     }
-    
+
+    .flip_card.is-flipped .flip_card_inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Card Faces */
+    .flip_card_front,
+    .flip_card_back {
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .flip_card_front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+
+    .flip_card_back {
+        transform: rotateY(180deg);
+        z-index: 1;
+    }
+
+    /* Card Info - Appears below image */
     .card_info {
         position: relative;
-        left: auto !important;
-        right: auto !important;
-        top: 20px;
         width: 80vw;
-        margin: 0 auto;
-        transform: none;
-        opacity: 1;
-        
+        max-width: 300px;
+        margin: 10px auto 0;
+        padding: 15px;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        transition: 
+            opacity 0.3s ease 0.1s, /* Slight delay to match flip */
+            visibility 0s linear 0.4s, /* Hide after flip completes */
+            height 0.3s ease,
+            transform 0.3s ease;
+        transform: translateY(-10px);
+        pointer-events: none;
     }
-    
-    .flip_card:hover .flip_card_inner {
-        transform: rotateY(180deg) scale(1.1); /* Smaller scale */
+
+    .flip_card.is-flipped .card_info {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        transition: 
+            opacity 0.3s ease 0.1s,
+            visibility 0s linear,
+            height 0.3s ease,
+            transform 0.3s ease;
+        transform: translateX(-80%);
+        margin-bottom: 1rem;
+    }
+
+    /* Remove hover effects for mobile */
+    .flip_card:hover ~ .flip_card,
+    .flip_card:has(~ .flip_card:hover),
+    .image_grid:has(.flip_card:hover) .flip_card:not(:hover) {
+        filter: none !important;
+        transform: none !important;
+    }
+
+    /* Touch improvements */
+    .flip_card {
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        touch-action: pan-y;
     }
     
     /* --------------------- TAKTIK MOBILE STYLING ------------------------ */
