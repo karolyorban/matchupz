@@ -13,12 +13,17 @@
     
     /* --------------------- STICKY MENU MOBILE STYLING -------------------- */
     .sticky_menu {
-        height: auto; /* Flexible height */
+        height: auto;
         padding: 0.5rem 5%;
         justify-content: center;
         overflow: visible; /* Allow menu to expand */
         background: rgba(61, 213, 152, 0.95) !important; /* Solid background */
+        z-index: -10;
       }
+
+      .sticky_menu > a {
+        left: 19vh;
+    }
     
       /* ----- Menu Items Container ----- */
       .sticky_menu ul {
@@ -62,7 +67,11 @@
         opacity: 0; /* Hide duplicate background */
       }
     
-    /* Hamburger menu activation */
+    /* Sticky menu styling can be removed before deployment*/
+
+    .hamburger_menu {
+        z-index: 4; /*styling's in the main css; only z-index changing for mobiles*/
+    }
    
     
     /* --------------------- HEADER MOBILE STYLING ------------------------- */
@@ -84,15 +93,16 @@
     
       .header_text {
         width: 100% !important;
+        height: auto;
         border-radius: 0 !important;
-        padding: 6rem 2rem 2rem 2rem !important;
+        padding: 10rem 2rem 2rem 2rem !important;
         background: rgba(61, 213, 152, 0.9) !important; /* Solid color for readability */
         backdrop-filter: none !important;
       }
     
       /* ----- Header Logos (Right Section) ----- */
       .header_logos {
-        top: 70vh !important;
+        top: 73vh !important;
         right: auto !important;
         transform: none !important;
         width: 100% !important;
@@ -124,6 +134,38 @@
         text-align: center;
         margin-top: 1rem !important;
       }
+    
+    /*section titles needs fixing*/
+
+    .section_title_container {
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+        top: 35vh;
+        text-align: center;
+        left: 0;
+        transform: translateX(-50%);
+        padding: 1rem;
+        min-width: 60vw;
+    }
+
+    .active_section_title {
+        display: inline-block;
+        background-color: rgba(61, 213, 152, 0.8);
+        border-radius:15px 15px 0 0;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        min-width: 60vw;
+        transform: rotateZ(90deg);
+    }
+
+    .sticky_menu.scrolled .active_section_title {
+        visibility: visible;
+    }
+    /*section titles end*/
     
     /* --------------------- STAFF MOBILE STYLING ------------------------- */
     .staff {
@@ -160,7 +202,7 @@
         margin: 0 auto;
         transform: none;
         opacity: 1;
-        visibility: visible;
+        
     }
     
     .flip_card:hover .flip_card_inner {
@@ -339,15 +381,16 @@
     
     /* Top button adjustments */
     .top_button {
-        left: 29vw;
-        top: 64%;
-        width: 40vw;
+        left: 24vw;
+        top: 83%;
+        width: 52vw;
         height: 10vh;
     }
     
     .top_button .formular_button {
         width: 100%;
-        height: auto;
+        height: 15%;
+        background-color: #3DD598;
     }
     
     /* General button adjustments */

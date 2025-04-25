@@ -14,6 +14,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 12vh;
+    font-family: 'montserrat', sans-serif;
 }
 
 body {
@@ -44,6 +45,13 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding: 0;
+}
+
+@media (min-width: 769px) {
+    .sticky_menu > a {
+        position: fixed;
+        left: 1900vh;
+    }
 }
 
 .sticky_menu::before {
@@ -113,7 +121,92 @@ body {
 }
 /* --------------------- STICKY MENU STYLING END ---------------------------- */
 /* --------------------- HAMBURGER MENU STYLING ----------------------------- */
+.hamburger_menu {
+    position: fixed;
+    top: 2rem;
+    left: 20px;
+    z-index: -4; /*hiding it for now, maybe we'll need it later*/
+}
 
+.hamburger_menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.menu_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.menu_icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: white;
+    border-radius: 50%;
+}
+
+#menu_toggle {
+    opacity: 0;
+    position: absolute;
+}
+
+#menu_toggle:checked ~ .menu_btn .menu_icon {
+    transform: rotate(90deg);
+}
+
+#menu_toggle:checked ~ .menu_box {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu_box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    top: 100%;
+    left: 0;
+    width: 45vw;
+    margin: 0;
+    padding: 2rem 0;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 5px 20px 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+.menu_item {
+    display: block;
+    padding: 12px 24px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu_item:hover {
+    background-color: #39c58d;
+    color: white;
+}
 
 /* --------------------- HAMBURGER MENU STYLING END ------------------------ */
 /* ------------------------ left part of the header start ------------------ */
@@ -208,7 +301,6 @@ body {
 .logo_text_subtext {
     width: 100%;
     max-width: 100%;
-    font-family: 'montserrat', sans-serif;
     font-size: clamp(19.2px, 1.9vw, 40px);
     font-weight: bold;
     color: white;
@@ -219,7 +311,6 @@ body {
 .slogan_subtext {
     width: 100%;
     max-width: 100%;
-    font-family: 'montserrat', sans-serif;
     font-size: clamp(17.6px, 1.16vw, 24.6px); /* original clamp(16px, 1.17vw, 22.4px); */
     color: white;
     margin-top: 2vh;
@@ -236,7 +327,6 @@ body {
 }
 
 .active_section_title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     color: white;
     font-weight: bold;
@@ -456,7 +546,6 @@ body {
     padding-top: 4rem;
     padding-bottom: 2rem;
     font-size: 1.7rem;
-    font-family: 'montserrat', sans-serif;
     width: 100%; /* Take full width */
     font-weight: bold;
 }
@@ -703,7 +792,6 @@ body {
 
 .nav_links a {
     color: white;
-    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     font-size: 1.2rem;
     padding: 0.3rem;
@@ -722,7 +810,6 @@ body {
 
 .section_breaker p {
     color: white;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .quote {
@@ -855,7 +942,6 @@ body {
     line-height: 1.6;
     font-weight: bold;
     margin-bottom: none;
-    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -991,7 +1077,6 @@ body {
 .sidebar-item p {
     margin: 0;
     color: white; /* Adjust color as needed */
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
 }
