@@ -18,7 +18,8 @@
         justify-content: center;
         overflow: visible; /* Allow menu to expand */
         background: rgba(61, 213, 152, 0.95) !important; /* Solid background */
-        z-index: -10;
+        z-index: 9;
+        visibility: hidden;
       }
 
       .sticky_menu > a {
@@ -150,6 +151,7 @@
     }
 
     .active_section_title {
+        visibility: visible;
         display: inline-block;
         background-color: rgba(61, 213, 152, 0.8);
         border-radius:15px 15px 0 0;
