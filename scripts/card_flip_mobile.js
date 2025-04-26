@@ -44,9 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Unflip any previously active card
-        if (activeCard) {
-            activeCard.classList.remove('is-flipped');
-        }
+        
         
         // Flip the clicked card
         card.classList.add('is-flipped');
@@ -54,12 +52,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Close all cards when touching outside
-    document.addEventListener('touchend', function(e) {
-        if (!e.target.closest('.flip_card')) {
-            flipCards.forEach(card => {
-                card.classList.remove('is-flipped');
-            });
-            activeCard = null;
-        }
-    }, { passive: true });
+    
 });
