@@ -320,10 +320,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    left: 4vw;
 }
 
 .logo > p {
-    font-size: 20px;
+    font-size: 18px;
     margin: 1rem 0; /* Add spacing */
     text-align: center;
 }
@@ -370,7 +371,7 @@
 /* Adjust dots navigation */
 .dots_container {
     top: 32vh;
-    left: 50%;
+    left: 54%;
     margin: 0.5rem 0 2rem 0;
 }
 
@@ -378,6 +379,7 @@
 .slide-arrows {
     position: relative;
     top: 20vh;
+    left: 4vw;
     width: 100%;
     margin: 1rem 0;
 }
@@ -486,7 +488,7 @@
     .floating-sidebar {
         position: absolute;
         width: 90%;
-        left: auto;
+        left: 10vw;
         top: 70vh;
         margin: 2rem auto;
         pointer-events: auto;
@@ -503,7 +505,7 @@
     }
 
     .rolling_ball {
-        width: 20vw;
+        visibility: hidden;
     }
     
     .formular_button {
