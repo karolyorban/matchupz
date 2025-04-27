@@ -285,28 +285,33 @@
 
 .taktik_section {
     height: auto;
-    padding-bottom: 3rem;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     position: relative;
+    background-color: black;
 }
 
 .taktik_container {
     display: flex;
-    height: 100%;
     flex-direction: column;
     background: none;
-    align-items: center;
     width: 100%;
+    padding: 0;
+    gap: 0;
+    margin-top: -32px;
 }
 
 /* Logo wrapper - top section */
 .taktik_logo_wrapper {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     position: relative;
     left: auto;
     background: url('mix/left_bckr.jpeg') center/cover no-repeat;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -334,10 +339,19 @@
 /* Right column - bottom section */
 .taktik_right_column {
     width: 100%;
+    height: 30vh;
+    margin: 0;
+    padding: 0;
+    gap: 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: none;
+}
+
+.screen_bg {
+    visibility: hidden;
 }
 
 /* Adjust the screenshots container */
@@ -345,13 +359,18 @@
     width: 100%;
     height: 30vh;
     border: none;
+    box-shadow: none;
+    top: 0;
+}
+
+.screenshots:hover {
+    transform: scale(1);
 }
 
 /* Adjust dots navigation */
 .dots_container {
-    position: relative;
-    top: 27vh;
-    left: 80vw;
+    top: 32vh;
+    left: 50%;
     margin: 0.5rem 0 2rem 0;
 }
 
@@ -433,7 +452,7 @@
     
     .clients_logo_right, .clients_logo_left {
         width: 20%;
-        top: 15%;
+        top: 26%;
     }
     
     .clients_logo_left {
@@ -441,18 +460,19 @@
     }
     
     .clients_logo_right {
-        right: 10%;
+        right: 13%;
     }
     
     /* --------------------- BOTTOM SECTION MOBILE ------------------------ */
     .content_section {
-        height: auto;
+        height: 150vh;
         padding-bottom: 100vh;
+        padding-top: 20vh;
     }
     
     .content_container {
         width: 90%;
-        top: 10%;
+        top: 0;
     }
     
     .anpfiff {
@@ -464,10 +484,10 @@
     }
     
     .floating-sidebar {
-        position: relative;
+        position: absolute;
         width: 90%;
         left: auto;
-        top: auto;
+        top: 70vh;
         margin: 2rem auto;
         pointer-events: auto;
     }
@@ -479,7 +499,11 @@
     .ball_button {
         right: 50%;
         transform: translateX(50%);
-        margin-top: 3rem;
+        margin-top: 15vh;
+    }
+
+    .rolling_ball {
+        width: 20vw;
     }
     
     .formular_button {
@@ -494,7 +518,9 @@
     
     /* --------------------- FOOTER ADJUSTMENTS -------------------------- */
     .logo_container {
+        position: relative;
         height: 30vh;
+        top: -5vh;
     }
     
     /* Top button adjustments */
