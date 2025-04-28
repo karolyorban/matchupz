@@ -298,6 +298,13 @@ body {
     margin: 0;
 }
 
+.white_on_green_text {
+    color: #3DD598;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1px;
+}
+
 .logo_text_subtext {
     width: 100%;
     max-width: 100%;

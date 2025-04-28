@@ -11,6 +11,14 @@
         <link rel="icon" type="image/x-icon" href="mix/matchupz_logo.png">
     </head>
 <body>
+    <svg style="display: none">
+        <filter id="bolden">
+            <feMorphology operator="dilate" radius="0.6"></feMorphology>
+        </filter>
+        <filter id="more_bolden">
+            <feMorphology operator="dilate" radius="1.4"></feMorphology>
+        </filter>
+    </svg>
     <div class="site-container">
     <!-- hamburger menu -->
     <nav class="hamburger_menu">
@@ -58,7 +66,7 @@
         </div>
         <div class="header_content">            
             <div class="header_text">
-                <p class="logo_text_subtext">FUSSBALLSPIELER:INNEN SCHNELLER IN DIE PERFORMANCEPHASE BRINGEN?</p>
+                <p class="logo_text_subtext">FUSSBALLSPIELER:INNEN SCHNELLER IN DIE <span class="white_on_green_text"><span class="bold_mobile">PERFORMANCEPHASE</span></span> BRINGEN?</p>
                 <p class="slogan_subtext">Wir wissen, dass sich unausgesprochene und enttäuschte Erwartungen negativ auf die Leistung auswirken.</p>
                 <p class="slogan_subtext">Mit unserem wissenschaftlichen Matching-Tool werden unterschiedliche Erwartungshaltungen zwischen Spieler:innen und Clubs sichtbar und durch einen professionellen Gesprächsleitfaden sofort besprechbar.</p>
             </div>
@@ -197,7 +205,7 @@
                 <!-- Left Column (Logos) -->
                 <div class="taktik_logo_wrapper">
                     <div class="logo active" data-index="0">
-                        <p class="taktik_logo_text fett">SCHRITT 1</p>
+                        <p class="taktik_logo_text fett s1">SCHRITT 1</p>
                         <img src="taktik/logo1.png" alt="Logo 1">
                         <p class="taktik_logo_text">Log dich in dein Club-Portal ein</p>
                     </div>

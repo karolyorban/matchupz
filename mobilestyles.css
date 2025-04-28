@@ -77,8 +77,7 @@
     
     /* --------------------- HEADER MOBILE STYLING ------------------------- */
     .video_header {
-        height: 110vh;
-        min-height: 100vh;
+        height: 150vh;
         display: flex;
         flex-direction: column;
       }
@@ -87,47 +86,62 @@
       .header_content {
         position: relative;
         width: 100% !important;
-        height: 70vh; /* Adjust as needed */
         padding: 2rem;
         justify-content: center;
       }
     
       .header_text {
+        top: -5vh;
         width: 100% !important;
-        height: auto;
+        height: 155vh;
         border-radius: 0 !important;
-        padding: 10rem 2rem 2rem 2rem !important;
-        background: rgba(61, 213, 152, 0.9) !important; /* Solid color for readability */
+        padding: 2rem 2rem 2rem 2rem !important;
+        background: linear-gradient(#3DD598, rgba(255, 255,255,0), #3DD598); /* Solid color for readability */
         backdrop-filter: none !important;
       }
     
       /* ----- Header Logos (Right Section) ----- */
       .header_logos {
-        top: 73vh !important;
+        top: 25vh;
         right: auto !important;
         transform: none !important;
         width: 100% !important;
-        height: 40vh; /* Adjust as needed */
+        height: 60vh; /* Adjust as needed */
         flex-direction: column; /* Side-by-side logos */
         justify-content: center;
-        gap: 2rem;
-        padding: 2rem;
+        gap: 0;
+        padding: 0;
       }
     
       /* ----- Individual Logos ----- */
       .header_logo_1, 
       .header_logo_2 {
-        width: 40% !important;
-        max-width: 200px;
         padding-top: 0 !important;
         height: auto;
         align-self: center;
+      }
+
+      .header_logo_1 {
+        width: 100% !important;
+        margin-bottom: -5vh;
+      }
+
+      .header_logo_2 {
+        width: 40% !important;
       }
     
       /* ----- Text Elements ----- */
       .logo_text_subtext {
         font-size: 1.5rem !important;
+        margin-top: 15vh;
+        margin-bottom: 60vh;
         text-align: center;
+        font-weight: bold !important;
+        filter: url('#bolden');
+      }
+
+      .bold_mobile {
+        filter: url('#more_bolden');
       }
     
       .slogan_subtext {
@@ -284,13 +298,13 @@
     /* In your mobile CSS section (max-width: 768px) */
 
 .taktik_section {
-    height: auto;
-    padding: 0;
+    height: 100vh;
+    padding: 20vh 0 0 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: black;
+    background: url('mix/left_bckr.jpeg') center/cover no-repeat;
 }
 
 .taktik_container {
@@ -309,9 +323,9 @@
     height: 50vh;
     position: relative;
     left: auto;
-    background: url('mix/left_bckr.jpeg') center/cover no-repeat;
     margin: 0;
     padding: 0;
+    order: 2;
 }
 
 .logo {
@@ -337,8 +351,20 @@
     display: block; /* Remove inline spacing */
 }
 
+.taktik_logo_text.fett {
+    position: relative;
+    bottom: 30vh; /* Lifts text up */
+    filter: url('#bolden');
+    font-size: 30px;
+}
+
+.taktik_logo_text.s1 {
+    bottom: 31.6vh;
+}
+
 /* Right column - bottom section */
 .taktik_right_column {
+    border: 20px solid rgba(255, 255, 255, 0);
     width: 100%;
     height: 30vh;
     margin: 0;
@@ -359,7 +385,7 @@
 .screenshots {
     width: 100%;
     height: 30vh;
-    border: none;
+    border: 20px solid rgba(255, 255, 255, 0);
     box-shadow: none;
     top: 0;
 }
@@ -370,7 +396,7 @@
 
 /* Adjust dots navigation */
 .dots_container {
-    top: 32vh;
+    top: 34vh;
     left: 54%;
     margin: 0.5rem 0 2rem 0;
 }
@@ -378,7 +404,7 @@
 /* Arrow navigation adjustments */
 .slide-arrows {
     position: relative;
-    top: 20vh;
+    top: 34vh;
     left: 4vw;
     width: 100%;
     margin: 1rem 0;
@@ -451,6 +477,11 @@
     .kunden {
         padding-bottom: 100vh; /* Taller section */
     }
+
+    .kunden_backgr img {
+        object-fit: cover;
+        object-position: 47% center; /* Push image to the right */
+    }
     
     .clients_logo_right, .clients_logo_left {
         width: 20%;
@@ -499,9 +530,9 @@
     }
     
     .ball_button {
-        right: 50%;
+        right: 51%;
         transform: translateX(50%);
-        margin-top: 15vh;
+        margin-top: 20vh;
     }
 
     .rolling_ball {
@@ -509,8 +540,8 @@
     }
     
     .formular_button {
-        width: 15vw;
-        height: 15vw;
+        width: 22vw;
+        height: 22vw;
     }
     
     /* --------------------- FORM MODAL MOBILE ---------------------------- */
