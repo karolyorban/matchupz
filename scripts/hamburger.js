@@ -11,16 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
         menuOpen = this.checked;
     });
 
+    // NEW: Close when clicking any menu link
+    document.querySelectorAll('.menu_box a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuOpen) {
+                menuToggle.checked = false;
+                menuToggle.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+
     // Close when clicking outside
     document.addEventListener('click', function(event) {
         const isClickInside = menuBox.contains(event.target) || 
                             menuBtn.contains(event.target) ||
                             event.target === menuToggle;
 
-        // Only close if menu is open and click is outside
         if (menuOpen && !isClickInside) {
             menuToggle.checked = false;
-            // Trigger the change event manually
             menuToggle.dispatchEvent(new Event('change'));
         }
     });

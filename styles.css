@@ -855,6 +855,10 @@ body {
     height: 100%;
 }
 
+.kunden_backgr_mobile {
+    visibility: hidden;
+}
+
 .kunden_backgr img {
     height: 100%;
     width: 100%;

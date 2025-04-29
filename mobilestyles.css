@@ -96,7 +96,15 @@
         height: 155vh;
         border-radius: 0 !important;
         padding: 2rem 2rem 2rem 2rem !important;
-        background: linear-gradient(#3DD598, rgba(255, 255,255,0), #3DD598); /* Solid color for readability */
+        background: linear-gradient(
+            to bottom,
+            #3DD598 0%,
+            rgba(61, 213, 152, 0) 28%,
+            rgba(61, 213, 152, 0) 50%,
+            rgba(61, 213, 152, 0.4) 60%,
+            rgba(61, 213, 152, 0.8) 65%,
+            #3DD598 100%
+          );
         backdrop-filter: none !important;
       }
     
@@ -475,25 +483,40 @@
     
     /* --------------------- KUNDEN MOBILE STYLING ------------------------ */
     .kunden {
+        position: relative;
         padding-bottom: 100vh; /* Taller section */
+        overflow: hidden;
+    }
+
+    .kunden_backgr_mobile{
+        position: absolute;
+        width: 120%; /* Extra width to allow for pushing */
+        height: 100%;
+        visibility: visible;
+    }
+
+    .kunden_backgr_mobile img {
+        object-fit: cover;
+        object-position: 52% center; /* Changed from 100% to 80% */
+        width: 100%;
+        height: 100%;
     }
 
     .kunden_backgr img {
-        object-fit: cover;
-        object-position: 47% center; /* Push image to the right */
+        visibility: hidden;
     }
     
     .clients_logo_right, .clients_logo_left {
         width: 20%;
-        top: 26%;
+        top: 22%;
     }
     
     .clients_logo_left {
-        right: 70%;
+        right: 67%;
     }
     
     .clients_logo_right {
-        right: 13%;
+        right: 10%;
     }
     
     /* --------------------- BOTTOM SECTION MOBILE ------------------------ */
@@ -580,5 +603,17 @@
     .card_composite::after, 
     .card_composite::before {
         display: none;
+    }
+
+    .card_composite {
+        box-shadow: 0 0 20px 5px rgba(185, 134, 81, 0.6);
+        animation: gentle-pulse 2s infinite alternate;
+        border-radius: 10px;
+        height: 25vh;
+    }
+
+    @keyframes gentle-pulse {
+        from { box-shadow: 0 0 15px 3px rgba(61, 213, 152, 0.5); }
+        to { box-shadow: 0 0 25px 8px rgba(61, 213, 152, 0.7); }
     }
 }
