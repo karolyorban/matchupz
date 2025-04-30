@@ -1,5 +1,5 @@
 /* Mobile CSS - For screens up to 768px width */
-@media (max-width: 768px) {
+@media (max-width: 768px){
     /* Base adjustments */
     html {
         scroll-padding-top: 8vh; /* Reduced for mobile */
@@ -270,7 +270,7 @@
             visibility 0s linear 0.4s, /* Hide after flip completes */
             height 0.3s ease,
             transform 0.3s ease;
-        transform: translateY(-10px);
+        transform: translateY(-1000px);
         pointer-events: none;
     }
 
@@ -431,56 +431,6 @@
     right: 5%;
 }
     
-    /* --------------------- SECTION BREAKER MOBILE ----------------------- */
-    .section_breaker {
-        height: auto;
-        padding: 2rem 0;
-        flex-direction: column;
-    }
-    
-    .left_group {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-        padding: 1rem 0;
-    }
-    
-    .bottom_logo, .social_icons {
-        height: auto;
-    }
-    
-    .social_icons img {
-        height: 5vh;
-    }
-    
-    .nav_links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 1rem 0;
-        gap: 1rem;
-    }
-    
-    .messi_icon {
-        display: none;
-    }
-    
-    .quote {
-        text-align: center;
-        margin: 1rem;
-    }
-    
-    .divider_quote {
-        font-size: 1.2rem;
-    }
-    
-    .divider_author {
-        font-size: 1rem;
-        text-align: center;
-    }
-    
     /* --------------------- KUNDEN MOBILE STYLING ------------------------ */
     .kunden {
         position: relative;
@@ -572,7 +522,6 @@
         width: 85% !important;
     }
     
-    /* --------------------- FOOTER ADJUSTMENTS -------------------------- */
     .logo_container {
         position: relative;
         height: 30vh;
@@ -597,6 +546,9 @@
     .formular_button {
         font-size: 0.9rem;
         padding: 0.8rem 1rem;
+        background-color: #3DD598;
+        border: 4px solid white;
+        animation: gentle-pulse-white 2s infinite alternate;
     }
     
     /* Hide some decorative elements for performance */
@@ -607,13 +559,109 @@
 
     .card_composite {
         box-shadow: 0 0 20px 5px rgba(185, 134, 81, 0.6);
-        animation: gentle-pulse 2s infinite alternate;
+        animation: gentle-pulse-green 2s infinite alternate;
         border-radius: 10px;
         height: 25vh;
     }
 
-    @keyframes gentle-pulse {
+    @keyframes gentle-pulse-green {
         from { box-shadow: 0 0 15px 3px rgba(61, 213, 152, 0.5); }
         to { box-shadow: 0 0 25px 8px rgba(61, 213, 152, 0.7); }
     }
+
+    @keyframes gentle-pulse-white {
+        from { box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.5); }
+        to { box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.7); }
+    }
+
+    
+    /* --------------------- SECTION BREAKER MOBILE ----------------------- */
+    .section_breaker {
+        height: auto;
+        min-height: 40vh; /* Adjust as needed */
+        padding: 2rem 5%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .breaker_container {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    /* Bottom right (Messi + quote) goes on top */
+    .bottom_right {
+        position: relative;
+        order: -1; /* Move to top */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .messi_icon {
+        display: block !important; /* Force show */
+        height: 15vh;
+        margin-left: 0;
+        margin-right: 2rem;
+    }
+    
+    .quote {
+        flex: 1;
+        margin-left: 0;
+        text-align: left;
+    }
+    
+    .divider_quote {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .divider_author {
+        font-size: 1rem;
+        text-align: left;
+        margin-top: 0;
+    }
+    
+    /* Left group (logo + social icons) */
+    .left_group {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+    }
+    
+    .bottom_logo {
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .social_icons {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .social_icons img {
+        height: 5vh;
+    }
+    
+    /* Nav links */
+    .nav_links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0 0 0;
+    }
+    
+    .nav_links a {
+        white-space: normal;
+        text-align: center;
+        font-size: 1rem;
+    }
+    
 }
