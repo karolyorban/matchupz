@@ -1,5 +1,5 @@
 /* Mobile CSS - For screens up to 768px width */
-@media (max-width: 768px){
+@media (max-width: 768px), (max-height: 768px) and (orientation: landscape){
     /* Base adjustments */
     html {
         scroll-padding-top: 8vh; /* Reduced for mobile */
@@ -93,7 +93,7 @@
       .header_text {
         top: -5vh;
         width: 100% !important;
-        height: 155vh;
+        height: 150vh;
         border-radius: 0 !important;
         padding: 2rem 2rem 2rem 2rem !important;
         background: linear-gradient(
@@ -663,5 +663,688 @@
         text-align: center;
         font-size: 1rem;
     }
+
+    .creator {
+        right: 4vw;
+    }
     
+}
+
+@media ((max-height: 768px) and (orientation: landscape)) {
+
+    .video_header {
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      /* ----- Header Content (Left Text) ----- */
+      .header_content {
+        position: relative;
+        width: 100% !important;
+        padding: 2rem;
+        justify-content: center;
+      }
+    
+      .header_text {
+        position: relative;
+        top: -5vh;
+        width: 100% !important;
+        height: 150vh;
+        border-radius: 0 !important;
+        padding: 2rem 2rem 2rem 2rem !important;
+        background: linear-gradient(
+            to bottom,
+            #3DD598 0%,
+            rgba(61, 213, 152, 0) 28%,
+            rgba(61, 213, 152, 0) 50%,
+            rgba(61, 213, 152, 0.4) 60%,
+            rgba(61, 213, 152, 0.8) 65%,
+            #3DD598 100%
+          );
+        backdrop-filter: none !important;
+      }
+    
+      /* ----- Header Logos (Right Section) ----- */
+      .header_logos {
+        top: 60vh;
+        transform: none !important;
+        width: 100% !important;
+        height: 10vh; /* Adjust as needed */
+        flex-direction: column; /* Side-by-side logos */
+        justify-content: center;
+        gap: 0;
+        padding: 0;
+      }
+    
+      /* ----- Individual Logos ----- */
+      .header_logo_1, 
+      .header_logo_2 {
+        padding-top: 0 !important;
+        height: auto;
+        align-self: center;
+        max-width: 250px;
+      }
+
+      .header_logo_1 {
+        width: 100% !important;
+        margin-bottom: -5vh;
+      }
+
+      .header_logo_2 {
+        width: 40% !important;
+      }
+    
+      /* ----- Text Elements ----- */
+      .logo_text_subtext {
+        font-size: 1.5rem !important;
+        margin-top: 5vh;
+        margin-bottom: 60vh;
+        text-align: center;
+        font-weight: bold !important;
+        filter: url('#bolden');
+        width: 80%;
+        align-self: center;
+      }
+
+      .bold_mobile {
+        filter: url('#more_bolden');
+      }
+    
+      .slogan_subtext {
+        font-size: 1.1rem !important;
+        text-align: center;
+        margin-top: 1rem !important;
+      }
+    
+    /*section titles needs fixing*/
+
+    .section_title_container {
+        position: absolute;
+        display: inline-block;
+        white-space: nowrap;
+        top: 50vh;
+        text-align: center;
+        left: 10px;
+        transform: translateX(-50%);
+        padding: 1rem;
+        min-width: 40vw;
+    }
+
+    .active_section_title {
+        visibility: visible;
+        display: inline-block;
+        background-color: rgba(61, 213, 152, 0.8);
+        border-radius:15px 15px 0 0;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        min-width: 40vw;
+        transform: rotateZ(90deg);
+    }
+
+    .sticky_menu.scrolled .active_section_title {
+        visibility: visible;
+    }
+    /*section titles end*/
+    
+    /* --------------------- STAFF MOBILE STYLING ------------------------- */
+    .staff {
+        min-height: auto;
+        padding-bottom: 5rem;
+    }
+    
+    .image_grid {
+        margin-top: 15vh;
+        gap: 2rem; /* Reduced from 6rem */
+        padding-bottom: 2rem;
+    }
+
+    /* Staff Card Container */
+    .image_row {
+        flex-direction: row;
+        gap: 3rem; /* Reduced from 4rem */
+        align-items: center;
+    }
+
+    /* Individual Flip Card */
+    .flip_card {
+        perspective: 300px;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        transform-style: preserve-3d;
+        width: 180px;
+    }
+
+    /* Card Inner Container */
+    .flip_card_inner {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform-style: preserve-3d;
+    }
+
+    .flip_card.is-flipped .flip_card_inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Card Faces */
+    .flip_card_front,
+    .flip_card_back {
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .flip_card_front {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+
+    .flip_card_back {
+        transform: rotateY(180deg);
+        z-index: 1;
+    }
+
+    /* Card Info - Appears below image */
+    .card_info {
+        position: relative;
+        width: 80vw;
+        max-width: 300px;
+        margin: 10px auto 0;
+        padding: 15px;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        transition: 
+            opacity 0.3s ease 0.1s, /* Slight delay to match flip */
+            visibility 0s linear 0.4s, /* Hide after flip completes */
+            height 0.3s ease,
+            transform 0.3s ease;
+        transform: translateY(-1000px);
+        pointer-events: none;
+    }
+
+    .flip_card.is-flipped .card_info {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        transition: 
+            opacity 0.3s ease 0.1s,
+            visibility 0s linear,
+            height 0.3s ease,
+            transform 0.3s ease;
+        transform: translateX(-80%);
+        margin-bottom: 1rem;
+    }
+
+    /* Remove hover effects for mobile */
+    .flip_card:hover ~ .flip_card,
+    .flip_card:has(~ .flip_card:hover),
+    .image_grid:has(.flip_card:hover) .flip_card:not(:hover) {
+        filter: none !important;
+        transform: none !important;
+    }
+
+    /* Touch improvements */
+    .flip_card {
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        touch-action: pan-y;
+    }
+    
+    /* --------------------- TAKTIK MOBILE STYLING ------------------------ */
+    /* In your mobile CSS section (max-width: 768px) */
+
+    .taktik_section {
+        position: relative;
+        z-index: 1;
+        height: 120vh;
+        background-color: white;
+    }
+    
+    .taktik_container {
+        display: grid;
+        grid-template-columns: 30vw 1fr;
+        height: 100%;
+        background: url('mix/left_bckr.jpeg') left / 30vw 100% no-repeat;
+    }
+    
+    /* Logo Column */
+    .taktik_logo_wrapper {
+        position: relative;
+        width: 80%;
+        bottom: 0;
+        left: 5%;
+        order: 0;
+    }
+    
+    .taktik_logo_wrapper .logo {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-100px);
+        opacity: 0;
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        text-align: center; /* Center everything */
+    }
+    
+    .taktik_logo_wrapper .logo.active {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0); /*check*/
+    }
+    
+    .taktik_logo_wrapper .logo img {
+        width: 40%;
+        height: auto;
+        display: block; /* Remove inline spacing */
+        margin: 0 auto; /* Center horizontally */
+    }
+    
+    .taktik_logo_text {
+        color: white;
+        display: block; /* Force block layout */
+        margin: none;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+        font-size: 1.7rem;
+        width: 100%; /* Take full width */
+        font-weight: bold;
+    }
+    
+    .fett {
+        font-size: 2.2rem;
+    }
+    
+    /* Right Column */
+    .taktik_right_column {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .screen_bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 3;
+    }
+    
+    .screenshots {
+        position: relative;
+        overflow: hidden;
+        z-index: 3;
+        height: 70%;
+        width: 80%;
+        top: -10vh;
+        right:0;
+        transition: transform 0.5s ease;
+        border: 16px solid black;
+        border-radius: 1%;
+        background-color: white;
+        box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.8);
+    }
+    
+    .screenshots:hover {
+        transform: scale(1.3) translateY(10%);
+    }
+    
+    .screenshots img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        opacity: 0;
+        transition: all 0.7s ease;
+        transform: translate(500px);
+    }
+    
+    .screenshots img.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .screenshots img.next {
+        transform: translateX(100px);
+    }
+    .screenshots img.prev {
+        transform: translateX(-100px);
+    }
+    
+    .screen_bg {
+        filter: none;
+        transition: filter 0.3s ease; /* Smooth transition */
+    }
+    
+    .taktik_right_column:hover .screen_bg:not(:hover) {
+        filter: brightness(0.5) grayscale(50%);
+    }
+    
+    /* Dots Navigation */
+    .dots_container {
+        position: absolute;
+        left: 260%;
+        top: 210%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+        z-index: 3;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid #3DD598;
+        background: rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+        background: white;
+        transform: scale(1.7);
+    }
+    
+    /*arrow navi*/
+    .slide-arrows {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        top: 40%;
+        left: 24%;
+        transform: translateY(-50%);
+        z-index: 10;
+        pointer-events: none; /* Allows clicks through empty spaces */
+    }
+    
+    .arrow-container {
+        position: relative;
+        width: 60px; /* Adjust based on your arrow size */
+        height: 60px;
+        cursor: pointer;
+        pointer-events: auto; /* Re-enable clicks */
+        margin: 0 20px;
+        transition: transform 0.2s ease;
+    }
+    
+    .arrow-container:hover {
+        transform: scale(1.1); /* Optional: slight grow effect */
+    }
+    
+    .default-arrow, .hover-arrow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: opacity 0.3s ease;
+    }
+    
+    .hover-arrow {
+        opacity: 0;
+    }
+    
+    /* Hover effects */
+    .arrow-container:hover .default-arrow {
+        opacity: 0;
+    }
+    
+    .arrow-container:hover .hover-arrow {
+        opacity: 1;
+    }
+    
+    /* Position adjustments */
+    .left-arrow {
+        margin-left: 1.5%;
+    }
+    
+    .right-arrow {
+        margin-right: 18.5%;
+    }
+    
+    /* --------------------- KUNDEN MOBILE STYLING ------------------------ */
+    .kunden {
+        position: relative;
+        padding-bottom: 100vh; /* Taller section */
+        overflow: hidden;
+    }
+
+    .kunden_backgr_mobile{
+        position: absolute;
+        width: 120%; /* Extra width to allow for pushing */
+        height: 100%;
+        visibility: visible;
+    }
+
+    .kunden_backgr_mobile img {
+        object-fit: cover;
+        object-position: 52% center; /* Changed from 100% to 80% */
+        width: 100%;
+        height: 100%;
+    }
+
+    .kunden_backgr img {
+        visibility: hidden;
+    }
+    
+    .clients_logo_right, .clients_logo_left {
+        width: 11%;
+        top: 6.9%;
+    }
+    
+    .clients_logo_left {
+        right:48%;
+    }
+    
+    .clients_logo_right {
+        right: 23%;
+    }
+    
+    /* --------------------- BOTTOM SECTION MOBILE ------------------------ */
+    .content_section {
+        height: 250vh;
+        padding-bottom: 100vh;
+        padding-top: 20vh;
+    }
+    
+    .content_container {
+        width: 90%;
+        top: 0;
+    }
+    
+    .anpfiff {
+        font-size: 2.5rem;
+    }
+    
+    .content_logo {
+        height: 55vh;
+    }
+    
+    .floating-sidebar {
+        position: absolute;
+        width: 90%;
+        left: 10vw;
+        top: 105vh;
+        margin: 2rem auto;
+        pointer-events: auto;
+    }
+    
+    .sidebar-item p {
+        font-size: 1.1rem;
+    }
+    
+    .ball_button {
+        right: 51%;
+        transform: translateX(50%);
+        margin-top: 32vh;
+    }
+
+    .rolling_ball {
+        visibility: hidden;
+    }
+    
+    .formular_button {
+        width: 13vw;
+        height: 13vw;
+    }
+    
+    /* --------------------- FORM MODAL MOBILE ---------------------------- */
+    #matchFormModal {
+        width: 85% !important;
+    }
+    
+    .logo_container {
+        position: relative;
+        height: 30vh;
+        top: -5vh;
+    }
+    
+    /* Top button adjustments */
+    .top_button {
+        left: 33vw;
+        top: 73%;
+        width: 34vw;
+        height: 10vh;
+    }
+    
+    .top_button .formular_button {
+        width: 100%;
+        height: 15%;
+        background-color: #3DD598;
+    }
+    
+    /* General button adjustments */
+    .formular_button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+        background-color: #3DD598;
+        border: 4px solid white;
+        animation: gentle-pulse-white 2s infinite alternate;
+    }
+    
+    /* Hide some decorative elements for performance */
+    .card_composite::after, 
+    .card_composite::before {
+        display: none;
+    }
+
+    .card_composite {
+        box-shadow: 0 0 20px 5px rgba(185, 134, 81, 0.6);
+        animation: gentle-pulse-green 2s infinite alternate;
+        border-radius: 10px;
+        height: 25vh;
+    }
+
+    @keyframes gentle-pulse-green {
+        from { box-shadow: 0 0 15px 3px rgba(61, 213, 152, 0.5); }
+        to { box-shadow: 0 0 25px 8px rgba(61, 213, 152, 0.7); }
+    }
+
+    @keyframes gentle-pulse-white {
+        from { box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.5); }
+        to { box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.7); }
+    }
+
+    
+    /* --------------------- SECTION BREAKER MOBILE ----------------------- */
+    .section_breaker {
+        height: auto;
+        min-height: 40vh; /* Adjust as needed */
+        padding: 2rem 5%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .breaker_container {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    /* Bottom right (Messi + quote) goes on top */
+    .bottom_right {
+        position: relative;
+        order: -1; /* Move to top */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .messi_icon {
+        display: block !important; /* Force show */
+        height: 15vh;
+        margin-left: 0;
+        margin-right: 2rem;
+    }
+    
+    .quote {
+        flex: 1;
+        margin-left: 0;
+        text-align: left;
+    }
+    
+    .divider_quote {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .divider_author {
+        font-size: 1rem;
+        text-align: left;
+        margin-top: 0;
+    }
+    
+    /* Left group (logo + social icons) */
+    .left_group {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+    }
+    
+    .bottom_logo {
+        height: 30vh;
+        margin-bottom: 1rem;
+    }
+    
+    .social_icons {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .social_icons img {
+        height: 5vh;
+    }
+    
+    /* Nav links */
+    .nav_links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0 0 0;
+    }
+    
+    .nav_links a {
+        white-space: normal;
+        text-align: center;
+        font-size: 1rem;
+    }
 }

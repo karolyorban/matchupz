@@ -18,6 +18,7 @@ html {
 }
 
 body {
+    min-width: 100vw;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -712,18 +713,7 @@ body {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
-    .arrow-container {
-        width: 40px;
-        height: 40px;
-    }
-    .left-arrow {
-        margin-left: 10px;
-    }
-    .right-arrow {
-        margin-right: 10px;
-    }
-}
+
 /*arrow navi end*/
 /* -------------------------- end of taktik ---------------------------- */
 /*breaker*/
@@ -1242,4 +1232,16 @@ footer {
     to {
         --angle: 360deg;
     }
+}
+
+.creator {
+    position: absolute;
+    bottom: 1vh;
+    right: 1vw;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.creator a {
+    color: white;
 }
