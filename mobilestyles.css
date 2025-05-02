@@ -2,7 +2,7 @@
 @media (max-width: 768px), (max-height: 768px) and (orientation: landscape){
     /* Base adjustments */
     html {
-        scroll-padding-top: 8vh; /* Reduced for mobile */
+        scroll-padding-top: 0vh; /* Reduced for mobile */
         overflow-x: hidden;
     }
     
@@ -673,7 +673,7 @@
 @media ((max-height: 768px) and (orientation: landscape)) {
 
     .video_header {
-        height: 150vh;
+        height: 170vh;
         display: flex;
         flex-direction: column;
       }
@@ -690,7 +690,7 @@
         position: relative;
         top: -5vh;
         width: 100% !important;
-        height: 150vh;
+        height: 180vh;
         border-radius: 0 !important;
         padding: 2rem 2rem 2rem 2rem !important;
         background: linear-gradient(
@@ -739,7 +739,7 @@
       .logo_text_subtext {
         font-size: 1.5rem !important;
         margin-top: 5vh;
-        margin-bottom: 60vh;
+        margin-bottom: 85vh;
         text-align: center;
         font-weight: bold !important;
         filter: url('#bolden');
@@ -754,7 +754,8 @@
       .slogan_subtext {
         font-size: 1.1rem !important;
         text-align: center;
-        margin-top: 1rem !important;
+        margin-top: 2rem !important;
+        bottom: 20vh;
       }
     
     /*section titles needs fixing*/
@@ -909,6 +910,7 @@
         z-index: 1;
         height: 120vh;
         background-color: white;
+        padding-top: 40vh;
     }
     
     .taktik_container {
@@ -962,6 +964,7 @@
     
     .fett {
         font-size: 2.2rem;
+        top: 0;
     }
     
     /* Right Column */
@@ -1034,7 +1037,7 @@
     .dots_container {
         position: absolute;
         left: 260%;
-        top: 210%;
+        top: 130%;
         transform: translateX(-50%);
         display: flex;
         gap: 15px;
@@ -1062,7 +1065,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        top: 40%;
+        top: 47%;
         left: 24%;
         transform: translateY(-50%);
         z-index: 10;
@@ -1071,8 +1074,8 @@
     
     .arrow-container {
         position: relative;
-        width: 60px; /* Adjust based on your arrow size */
-        height: 60px;
+        width: 50px; /* Adjust based on your arrow size */
+        height: 50px;
         cursor: pointer;
         pointer-events: auto; /* Re-enable clicks */
         margin: 0 20px;
@@ -1112,13 +1115,13 @@
     }
     
     .right-arrow {
-        margin-right: 18.5%;
+        margin-right: 19.5%;
     }
     
     /* --------------------- KUNDEN MOBILE STYLING ------------------------ */
     .kunden {
         position: relative;
-        padding-bottom: 100vh; /* Taller section */
+        padding-bottom: 200vh; /* Taller section */
         overflow: hidden;
     }
 
@@ -1131,7 +1134,7 @@
 
     .kunden_backgr_mobile img {
         object-fit: cover;
-        object-position: 52% center; /* Changed from 100% to 80% */
+        object-position: center 0px;
         width: 100%;
         height: 100%;
     }
@@ -1142,15 +1145,15 @@
     
     .clients_logo_right, .clients_logo_left {
         width: 11%;
-        top: 6.9%;
+        top: 21%;
     }
     
     .clients_logo_left {
-        right:48%;
+        right:53%;
     }
     
     .clients_logo_right {
-        right: 23%;
+        right: 18%;
     }
     
     /* --------------------- BOTTOM SECTION MOBILE ------------------------ */
@@ -1209,7 +1212,7 @@
     .logo_container {
         position: relative;
         height: 30vh;
-        top: -5vh;
+        top: 0;
     }
     
     /* Top button adjustments */
@@ -1245,7 +1248,7 @@
         box-shadow: 0 0 20px 5px rgba(185, 134, 81, 0.6);
         animation: gentle-pulse-green 2s infinite alternate;
         border-radius: 10px;
-        height: 25vh;
+        height: 55vh;
     }
 
     @keyframes gentle-pulse-green {
