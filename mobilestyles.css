@@ -1,5 +1,5 @@
 /* Mobile CSS - For screens up to 768px width */
-@media (max-width: 768px), (max-height: 768px) and (orientation: landscape){
+@media (max-width: 768px){
     /* Base adjustments */
     html {
         scroll-padding-top: 0vh; /* Reduced for mobile */
@@ -670,7 +670,7 @@
     
 }
 
-@media ((max-height: 768px) and (orientation: landscape)) {
+@media (max-width: 768px) and (max-height: 768px) and (orientation: landscape) {
 
     .video_header {
         height: 170vh;
