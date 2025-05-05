@@ -1132,7 +1132,8 @@ body.modal-open {
 }
 
 /* Form styling */
-.match_form {
+.modal_content {
+    background-image: url('mix/left_bckr.jpeg');
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -1155,6 +1156,15 @@ body.modal-open {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+.match_form .formular_button {
+    color: #333;
+    top: 10%;
+    left: 5%;
+    border-radius: 10px;
+    height: 5vh;
+    width: 12ch;
 }
 /* ------------------------- end of form ------------------------------- */
 

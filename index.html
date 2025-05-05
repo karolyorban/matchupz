@@ -352,11 +352,19 @@
 <div class="form_modal" id="matchFormModal">
     <div class="modal_content">
         <span class="close_modal">&times;</span>
-        <h2>Test Formular</h2>
+        <h2>Demo-Termin vereinbaren</h2>
         <form class="match_form">
             <div class="form_group">
-                <label for="name">Name des Clubs</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name_des_clubs">Name des Clubs</label>
+                <input type="text" id="name_des_clubs" name="name_des_clubs" required>
+            </div>
+            <div class="form_group">
+                <label for="Ansprechperson">Ansprechperson</label>
+                <input type="text" id="Ansprechperson" name="Ansprechperson" required>
+            </div>
+            <div class="form_group">
+                <label for="funktion">Funktion</label>
+                <input type="text" id="funktion" name="funktion" required>
             </div>
             <div class="form_group">
                 <label for="email">Email</label>
@@ -364,19 +372,10 @@
             </div>
             <div class="form_group">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone"oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
             <div class="form_group">
-                <label for="role">Ich bin der</label>
-                <select id="role" name="role" required>
-                    <option value="">Select...</option>
-                    <option value="player">Manager</option>
-                    <option value="club">Assistant</option>
-                    <option value="agent">Sekretärin</option>
-                </select>
-            </div>
-            <div class="form_group">
-                <label for="message">Magst mit uns etwas mitteilen?</label>
+                <label for="message">Nachricht</label>
                 <textarea id="message" name="message" rows="4"></textarea>
             </div>
             <button type="submit" class="formular_button">  <!-- Changed to type="submit" -->
