@@ -74,6 +74,11 @@
         z-index: 40; /*styling's in the main css; only z-index changing for mobiles*/
     }
    
+    .flags {
+        width: 12vw;
+        left: 79%;
+        top: 7%;
+    }
     
     /* --------------------- HEADER MOBILE STYLING ------------------------- */
     .video_header {
