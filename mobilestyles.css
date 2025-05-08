@@ -344,6 +344,7 @@
 .logo {
     height: auto; /* Changed from 150% */
     width: 100%;
+    margin: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -370,6 +371,10 @@
     filter: url('#bolden');
     font-size: 30px;
 }
+
+.taktik_logo_text:not(.fett) {
+        width: 90%; /* Constrain width */
+    }
 
 .taktik_logo_text.s1 {
     bottom: 31.6vh;
