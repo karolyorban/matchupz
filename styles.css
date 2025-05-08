@@ -33,7 +33,7 @@ body {
     font-size: 3rem;
 }
 /* ---------------------   STICKY MENU STYLING ------------------------------ */
-/*here i start*/
+
 .sticky_menu {
     position: fixed;
     top: 0;
@@ -432,12 +432,22 @@ body {
 .card_info p {
     margin-bottom: 1.5vh;
     font-size: 1.2rem;
-    padding-left: 5.5ch;
-    text-indent: -5.5ch;
+    
 }
 
 .card_bold {
+    display: inline-flex;
+    gap: 10px;
     font-weight: bold;
+}
+
+.card_bold i {
+    font-size: 0.8em;      /* Slightly smaller if needed */
+    margin-top: 0.2em;
+}
+.green_line {
+    border: 1px solid #9af0cc;
+    margin: 0.5em 0 0.8em 0;
 }
 
 .flip_card:hover ~ .flip_card,
@@ -1150,7 +1160,16 @@ body.modal-open {
 }
 
 /* Form styling */
+
+.match_form {
+    position: relative;
+    padding: 35px;
+    background-color: white;
+    border-radius: 20px;
+}
+
 .modal_content {
+    overflow: hidden;
     background-image: url('mix/left_bckr.jpeg');
     display: flex;
     flex-direction: column;
@@ -1158,14 +1177,23 @@ body.modal-open {
     margin-top: 20px;
 }
 
+.modal_content h2 {
+    align-self: center;
+    margin: 20px;
+    color: white;
+}
+
 .form_group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .form_group label {
     font-weight: bold;
+    min-width: 16ch;
 }
 
 .form_group input,
@@ -1174,16 +1202,39 @@ body.modal-open {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    flex: 1;
+    border: 1px solid #39c58d;
 }
 
 .match_form .formular_button {
-    color: #333;
-    top: 10%;
+    color: white;
+    top: 5%;
     left: 36.0%;
     border-radius: 10px;
     height: 5vh;
     width: 10vw;
     border: 2px solid white;
+    background-color: #39c58d;
+}
+
+.form_group label i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #555; /* Icon color */
+    width: 16px; /* Ensures consistent spacing */
+}
+
+.form_bottom_logo {
+    position: absolute;
+    width: 20vw;
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%);
+}
+
+.form_bottom_logo img {
+    width: 100%;
+    align-items: center;
+    filter: brightness(0) invert(1);
 }
 /* ------------------------- end of form ------------------------------- */
 

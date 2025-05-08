@@ -527,6 +527,21 @@
         width: 85% !important;
     }
     
+    .form_group {
+        flex-direction: column;
+    }
+
+    .match_form .formular_button {
+        width: 30vw;
+        height: 10vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .modal_content h2 {
+        text-align: center;        
+    }
+
     .logo_container {
         position: relative;
         height: 30vh;
