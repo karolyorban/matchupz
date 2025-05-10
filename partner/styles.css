@@ -13,6 +13,47 @@ body {
     overflow: hidden;
 }
 
-img {
+.main_container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.back_image {
+    position: absolute;
     width: 100%;
+    height: auto;
+}
+
+.back_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.left_part {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30vw;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.93) 50%,
+        rgba(0, 0, 0, 0.85) 70%,
+        rgba(0, 0, 0, 0.5) 85%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 2;
+}
+
+.text {
+    position: absolute;
+    left: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25vw;
+    color: white;
+    z-index: 3;
 }
