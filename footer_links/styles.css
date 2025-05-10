@@ -11,6 +11,9 @@ body {
         );
     min-height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Optional: Add subtle noise texture to hide banding */
@@ -109,3 +112,56 @@ body::before {
 .neon-line-2 { top: 0vh; }
 .neon-line-3 { top: 3vh; }
 .neon-line-4 { top: 12vh; }
+
+.content_card {
+    position: relative;
+    border: 1px solid #3DD598;
+    border-radius: 40px;
+    width: 25vw;
+    height: 80vh;
+    background-color: #090f10;
+    box-shadow: 
+        0 0 5px rgba(61, 213, 152, 0.3),  /* Inner glow */
+        0 0 15px rgba(61, 213, 152, 0.2), /* Medium glow */
+        0 0 30px rgba(61, 213, 152, 0.1); /* Outer glow spread */
+    
+    /* Optional enhancements */
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+}
+
+h1 {
+    margin: 4rem auto 3rem 7rem;
+    color: white;
+    font-size: 3rem;
+}
+
+p {
+    margin: auto 4rem auto 4rem;
+}
+
+.divider {
+    width: 100%;
+    border: 1px solid rgba(61, 213, 152, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 2rem;
+}
+
+.subtext {
+    color: white;
+}
+
+.copyright {
+    color: rgba(256, 256, 256, 0.5);
+}
