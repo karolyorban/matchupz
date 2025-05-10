@@ -1,43 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu_toggle');
-    const menuBtn = document.querySelector('.menu_btn');
-    const menuBox = document.querySelector('.menu_box');
+    // Setup function for any menu
+    function setupMenu(toggleId, btnClass, boxClass) {
+        const toggle = document.getElementById(toggleId);
+        const btn = document.querySelector(`.${btnClass}`);
+        const box = document.querySelector(`.${boxClass}`);
+        let isOpen = false;
 
-    // Track menu state
-    let menuOpen = false;
+        toggle.addEventListener('change', () => isOpen = toggle.checked);
+        
+        document.querySelectorAll(`.${boxClass} a`).forEach(link => {
+            link.addEventListener('click', () => {
+                if (isOpen) toggle.checked = false;
+            });
+        });
 
-    // Update state when menu is toggled via checkbox
-    menuToggle.addEventListener('change', function() {
-        menuOpen = this.checked;
-    });
-
-    // NEW: Close when clicking any menu link
-    document.querySelectorAll('.menu_box a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (menuOpen) {
-                menuToggle.checked = false;
-                menuToggle.dispatchEvent(new Event('change'));
+        document.addEventListener('click', (e) => {
+            if (isOpen && !box.contains(e.target) && !btn.contains(e.target) && e.target !== toggle) {
+                toggle.checked = false;
             }
         });
-    });
 
-    // Close when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInside = menuBox.contains(event.target) || 
-                            menuBtn.contains(event.target) ||
-                            event.target === menuToggle;
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isOpen) toggle.checked = false;
+        });
+    }
 
-        if (menuOpen && !isClickInside) {
-            menuToggle.checked = false;
-            menuToggle.dispatchEvent(new Event('change'));
-        }
-    });
-
-    // Close when pressing Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && menuOpen) {
-            menuToggle.checked = false;
-            menuToggle.dispatchEvent(new Event('change'));
-        }
-    });
+    // Initialize both menus
+    setupMenu('menu_toggle', 'menu_btn', 'menu_box');      // Hamburger menu
+    setupMenu('language_toggle', 'language_btn', 'language_box'); // Language menu
 });

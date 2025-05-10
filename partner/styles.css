@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: 
+        /* Smoother version with noise to prevent banding */
+        linear-gradient(
+            to bottom,
+            #090f10,
+            #0a1618,
+            #090f10
+        );
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+}

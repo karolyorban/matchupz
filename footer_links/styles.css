@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: 
+        /* Smoother version with noise to prevent banding */
+        linear-gradient(
+            to bottom,
+            #090f10,
+            #0a1618,
+            #090f10
+        );
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Optional: Add subtle noise texture to hide banding */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(
+            circle at center,
+            rgba(0, 255, 100, 0.03) 0%,
+            transparent 70%
+        );
+}
+
+/* Shared styles for all neon lines */
+.neon-line {
+    position: absolute;
+    right: 0;
+    width: 110%;
+    height: 1px;
+    background: transparent;
+    transform: rotate(-30deg);
+    transform-origin: top right;
+    overflow: hidden;
+}
+
+/* First segment (top-right) with fade-out + neon glow */
+.neon-line::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        #0f0 0%,
+        rgba(0, 255, 0, 0) 100%
+    );
+    /* Primary glow (sharp) */
+    box-shadow: 
+        0 0 2px #fff,
+        0 0 5px #0f0,
+        0 0 15px #0f0;
+    /* Secondary glow (diffuse) */
+    filter: drop-shadow(0 0 8px #0f0);
+    mask: linear-gradient(
+        to right,
+        black 0%,
+        black 80%,
+        transparent 100%
+    );
+}
+
+/* Last segment (bottom-left) with fade-in + neon glow */
+.neon-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        #0f0 0%,
+        rgba(0, 255, 0, 0) 100%
+    );
+    /* Primary glow (sharp) */
+    box-shadow: 
+        0 0 2px #fff,
+        0 0 5px #0f0,
+        0 0 15px #0f0;
+    /* Secondary glow (diffuse) */
+    filter: drop-shadow(0 0 8px #0f0);
+    mask: linear-gradient(
+        to left,
+        black 0%,
+        black 80%,
+        transparent 100%
+    );
+}
+
+.neon-line::before, .neon-line::after {
+    animation: neon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; filter: drop-shadow(0 0 12px #0f0); }
+}
+
+/* Individual line positions */
+.neon-line-1 { top: -5vh; }
+.neon-line-2 { top: 0vh; }
+.neon-line-3 { top: 3vh; }
+.neon-line-4 { top: 12vh; }
