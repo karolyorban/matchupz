@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('montserrat_n.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'montserrat', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -14,6 +25,7 @@ body {
 }
 
 .main_container {
+    display: flex;
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -32,6 +44,7 @@ body {
 }
 
 .left_part {
+    display: flex;
     position: absolute;
     left: 0;
     top: 0;
@@ -45,7 +58,7 @@ body {
         rgba(0, 0, 0, 0.5) 85%,
         rgba(0, 0, 0, 0) 100%
     );
-    z-index: 2;
+    z-index: 1;
 }
 
 .text {
@@ -56,4 +69,44 @@ body {
     width: 25vw;
     color: white;
     z-index: 3;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+.green_text {
+    color: #3DD598;
+}
+
+.neon-list {
+    list-style-type: none; /* Removes default bullets */
+    padding-left: 1.5rem; /* Space for custom bullets */
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.neon-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.neon-list li::before {
+    content: "•";
+    color: #0f0; /* Neon green */
+    font-size: 1.8rem;
+    position: absolute;
+    left: -1.5rem;
+    text-shadow: 0 0 5px #0f0; /* Glow effect */
+    line-height: 1;
 }
