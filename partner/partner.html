@@ -8,28 +8,53 @@
         <link rel="stylesheet" href="styles.css" type="text/css">
         <link rel="stylesheet" href="mobilestyles.css" type="text/css">
         <title>Partner werden</title> <!-- need to be fixed -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="main_container">
+    <header class="main-header">
+        <a href="../index.html" class="logo"> <!-- Wrap logo in anchor tag -->
+            <img src="../mix/matchupz_logo_text.png" alt="MATCHUPZ Logo">
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html#staff">Team</a></li>
+                <li><a href="../index.html#taktik">So Funktioniert's</a></li>
+                <li><a href="../index.html#kunden">Kunden</a></li>
+                <li><a href="../index.html#anpfiff">Kontakt</a></li>
+            </ul>
+        </nav>
+            <nav class="language_menu">
+        <input id="language_toggle" type="checkbox" />
+        <label class="language_btn" for="language_toggle">            
+            <img src="../mix/language_globe.png" alt="Language" class="language_icon" loading="lazy">
+            <span class="white_text">DE</span>
+        </label>
+        <ul class="language_box">
+            <li><a href="index_en.html" data-lang="en">English</a></li>
+            <li><a href="#" data-lang="de">Deutsch</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main class="main_container">
         <div class="left_part"></div>
         <div class="back_image">
             <img src="partner.png" alt="">
         </div>
         <div class="text">
             <h2  class="green_text">MATCHUPZ</h2>
-            <h1>WERDE PARTNER</h1>
+            <h1>WERDE PARTNER:IN</h1>
             <ul class="neon-list">
-                <li>Bringe Clubs aufs nächste Level</li>
-                <li>Verdiene eine Provision pro Club und Matching</li>
-                <li>Exklusiv-Partnerschaftsprogramm</li>
+                <li><i class="fa-solid fa-arrow-trend-up"></i>Bringe Clubs aufs nächste Level</li>
+                <li><i class="fa-solid fa-coins"></i>Verdiene eine Provision pro Club und Matching</li>
+                <li><i class="fa-solid fa-star"></i>Exklusiv-Partnerschaftsprogramm</li>
             </ul>
             <h3 class="green_text">Voraussetzungen</h3>
             <ul class="neon-list">
-                <li>Leidenschaft für Fußball</li>
-                <li>Respektvoller Umgang mit unseren Werten</li>
-                <li>Begeisterter Vertriebler</li>
+                <li><i class="fa-solid fa-futbol"></i>Leidenschaft für Fußball</li>
+                <li><i class="fa-solid fa-hand-holding-heart"></i>Respektvoller Umgang mit unseren Werten</li>
+                <li><i class="fa-solid fa-face-smile-beam"></i>Begeisterter Vertriebler</li>
             </ul>
         </div>
-    </div>
+    </main>
 </body>
 </html>

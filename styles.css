@@ -49,13 +49,6 @@ body {
     padding: 0;
 }
 
-@media (min-width: 769px) {
-    .sticky_menu > a {
-        position: fixed;
-        left: 1900vh;
-    }
-}
-
 .sticky_menu::before {
     content: "";
     position: absolute;
