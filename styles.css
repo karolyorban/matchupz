@@ -91,6 +91,21 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Active section menu item style */
+.sticky_menu a.active-section {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Make sure the active state is visible */
+.sticky_menu.scrolled a.active-section {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Remove the default active state since we're handling it with JS */
+.sticky_menu a:active {
+    background-color: transparent;
+}
+
 .top_button {
     position: fixed;
     top: 82vh;

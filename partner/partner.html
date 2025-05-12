@@ -54,7 +54,62 @@
                 <li><i class="fa-solid fa-hand-holding-heart"></i>Respektvoller Umgang mit unseren Werten</li>
                 <li><i class="fa-solid fa-face-smile-beam"></i>Begeisterter Vertriebler</li>
             </ul>
+            <button class="partner_button">
+                Jetzt bewerben
+            </button>
         </div>
     </main>
+    <!-- The Modal -->
+    <div id="partnerModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Partner Application</h2>
+        <form id="partnerForm">
+        <div class="form-group">
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">E-Mail-Addresse*</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+            <label>Wie bist du auf uns aufmerksam geworden? *</label>
+            <select id="hearAbout" name="hearAbout" required>
+            <option value="">Was soll hier stehen? Bitte wähle was :D</option>
+            <option value="google">Google</option>
+            <option value="socialmedie">Soziale Medien</option>
+            <option value="presse">Presse</option>
+            <option value="freunde">Freunde/Bekannte</option>
+            <option value="other">Sonstiges</option>
+            </select>
+            <div id="otherSourceContainer" style="display: none;">
+            <label for="otherSource">Bitte???:</label>
+            <input type="text" id="otherSource" name="otherSource" required>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="whyChoose">Warum möchtest du bei uns Partner:in werden?*</label>
+            <textarea id="whyChoose" name="whyChoose" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Abschicken</button>
+        </form>
+    </div>
+    </div>
+    <script src="form.js"></script>
 </body>
 </html>

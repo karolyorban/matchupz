@@ -261,3 +261,101 @@ i {
     text-shadow: 0 0 20px #3DD598;
   }
 }
+
+.partner_button {
+    display: block;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 4vh 5vw;
+    border: 2px solid #3DD598;
+    border-radius: 15px;
+    background: none;
+    transition: 0.2s all ease;
+}
+
+.partner_button:hover {
+    color: #3DD598;
+    background-color: white;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Enable scrolling for the modal container */
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: url('../mix/left_bckr.jpeg');
+  margin: 5% auto; /* Centered with top margin */
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  margin-bottom: 5%; /* Space at bottom when scrolling */
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: white;
+  color: #3DD598;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    color: white;
+  background-color: #2fb881;
+}

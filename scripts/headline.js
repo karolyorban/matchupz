@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const stickyMenu = document.querySelector('.sticky_menu');
     const scrollThreshold = window.innerHeight * 0.1;
     const sectionTitle = document.querySelector('.active_section_title');
+    const navLinks = document.querySelectorAll('.sticky_menu a');
     
     // Map section IDs to their display titles
     const sectionTitles = {
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Track active section on scroll
     function handleScroll() {
-        // Sticky menu background logic (existing)
+        // Sticky menu background logic
         if (window.scrollY > scrollThreshold) {
             stickyMenu.classList.add('scrolled');
         } else {
@@ -21,15 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
             sectionTitle.textContent = ''; // Clear title when at top
         }
         
-        // New: Find which section is in view with stricter conditions
+        // Find which section is in view
         const sections = document.querySelectorAll('section[id]');
         let activeSection = null;
-        const triggerOffset = window.innerHeight * 0.15; // Only trigger when section reaches 30% of viewport
+        const triggerOffset = window.innerHeight * 0.15;
         
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            // Only consider section active when its top is above 30% of viewport
-            // and its bottom is still visible
             if (rect.top <= triggerOffset && rect.bottom >= triggerOffset) {
                 activeSection = section.id;
             }
@@ -41,6 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (!activeSection) {
             sectionTitle.textContent = ''; // Clear if no section is active
         }
+        
+        // Update active menu item
+        navLinks.forEach(link => {
+            link.classList.remove('active-section');
+            if (link.getAttribute('href') === `#${activeSection}`) {
+                link.classList.add('active-section');
+            }
+        });
     }
     
     window.addEventListener('scroll', handleScroll);
