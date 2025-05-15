@@ -316,15 +316,15 @@ i {
 }
 
 .modal-content::before {
-  content: "";
-  position: absolute;
-  top: -4vh;
-  left: -2vw;
-  width: 200px;
-  height: 200px;
-  background: url('logo.png') no-repeat center center;
-  background-size: contain;
-  margin-bottom: 8vh;
+    content: "";
+    position: absolute;
+    top: -2vh; /* Adjust this value as needed */
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: url('logo.png') no-repeat center center;
+    background-size: contain;
+    margin-bottom: 8vh;
 }
 
 .close {
