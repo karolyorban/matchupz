@@ -4,26 +4,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const btn = document.querySelector(".partner_button");
     const closeBtn = document.querySelector(".close");
     const hearAboutSelect = document.getElementById("hearAbout");
-    const partnerForm = document.getElementById("partnerForm"); // Removed: otherSourceContainer
+    const otherSourceContainer = document.getElementById("otherSourceContainer");
+    const partnerForm = document.getElementById("partnerForm");
 
     // Functions
     function openModal() {
         modal.style.display = "block";
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // Prevent body scrolling
     }
 
     function closeModal() {
         modal.style.display = "none";
-        document.body.style.overflow = "";
+        document.body.style.overflow = ""; // Restore body scrolling
         resetForm();
     }
 
     function resetForm() {
         partnerForm.reset();
-        // Removed: otherSourceContainer.style.display = "none";
+        otherSourceContainer.style.display = "none";
     }
 
-    // Removed: handleHearAboutChange() function (no longer needed)
+    function handleHearAboutChange() {
+        otherSourceContainer.style.display = 
+            this.value === "other" ? "block" : "none";
+    }
 
     function handleFormSubmit(e) {
         e.preventDefault();
@@ -38,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     closeBtn.addEventListener("click", closeModal);
-    // Removed: hearAboutSelect.addEventListener("change", handleHearAboutChange);
+    hearAboutSelect.addEventListener("change", handleHearAboutChange);
     partnerForm.addEventListener("submit", handleFormSubmit);
 
     // Close modal when clicking outside content
