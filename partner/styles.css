@@ -10,6 +10,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     background: 
@@ -31,11 +33,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    background-color: #3DD598;
+    background-color: none;
+    transition: background-color 0.3s ease;
     z-index: 4; /* Higher than other elements */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: -12vh;
 }
+
+.main-header.scrolled {
+    background-color: rgba(61, 213, 152, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Logo as home link */
 .logo {
@@ -158,17 +166,18 @@ body {
 .main_container {
     display: flex;
     position: relative;
-    height: 100vh;
+    min-height: 100vh; /* Changed from height to min-height */
     width: 100vw;
     margin-top: -12vh; /* Pulls content up to overlap */
     padding-top: 12vh;
+    flex-direction: column; /* Add this */
+    padding-bottom: 20vh; /* Reserve space for footer */
 }
 
 .back_image {
     position: absolute;
     width: 100%;
     height: auto;
-    border: 2px solid white;
     top: 0;
 }
 
@@ -419,3 +428,135 @@ select {
   background-size: 20px;
   padding-right: 30px !important;
 }
+
+/*footer start*/
+/* Footer Section - Exact Match from Main Page */
+.section_breaker {
+    position: absolute; /* Keep as relative */
+    z-index: 6;
+    width: 100%;
+    height: 20vh;
+    background: url('../mix/section_divider.png') center/cover no-repeat;
+    margin-top: auto; /* This pushes it to bottom */
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+}
+
+.breaker_container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.left_group {
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.bottom_logo {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom_logo img {
+    margin-top: 1.5vh;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.social_icons {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding-bottom: 1rem;
+}
+
+.social_icons img {
+    height: 7vh;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: grayscale(1);
+}
+
+.social_icons img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%; /* This positions links to the left of Messi */
+}
+
+.nav_links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav_links a:hover {
+    color: #ccc;
+}
+
+.messi_icon {
+    margin-left: 7%; /* Space between links and Messi image */
+    height: 18vh;
+}
+
+.quote {
+    margin-left: 3%; /* Space between Messi image and quote */
+}
+
+.divider_quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.divider_author {
+    font-size: 1.35rem;
+    margin-top: 1.5vh;
+    text-align: left;
+}
+
+.bottom_right {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+}
+
+.creator {
+    position: absolute;
+    bottom: 1vh;
+    right: 1vw;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.creator a {
+    color: white;
+}
+/*footer end*/
+

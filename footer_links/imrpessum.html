@@ -10,6 +10,31 @@
         <title>Boilerplate</title> <!-- need to be fixed -->
 </head>
 <body>
+    <header class="main-header">
+        <a href="../index.html" class="logo"> <!-- Wrap logo in anchor tag -->
+            <img src="../mix/matchupz_logo_text.png" alt="MATCHUPZ Logo">
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html#staff">Team</a></li>
+                <li><a href="../index.html#taktik">So Funktioniert's</a></li>
+                <li><a href="../index.html#kunden">Kunden</a></li>
+                <li><a href="../index.html#anpfiff">Kontakt</a></li>
+                <li><a href="../partner/partner.html">Partner</a></li>
+            </ul>
+        </nav>
+            <nav class="language_menu">
+                <input id="language_toggle" type="checkbox" />
+                <label class="language_btn" for="language_toggle">            
+                    <img src="../mix/language_globe.png" alt="Language" class="language_icon" loading="lazy">
+                    <span class="white_text">DE</span>
+                </label>
+                <ul class="language_box">
+                    <li><a href="index_en.html" data-lang="en">English</a></li>
+                    <li><a href="#" data-lang="de">Deutsch</a></li>
+                </ul>
+            </nav>
+    </header>
     <div class="neon-line neon-line-1"></div>
     <div class="neon-line neon-line-2"></div>
     <div class="neon-line neon-line-3"></div>
@@ -30,5 +55,33 @@
         <p class="subtext">Max Mustermann</p>
         <p class="copyright">© 2025 MatchupZ - Alle Rechte vorbehalten.</p>
     </div>
+    <section class="section_breaker">
+        <div class="breaker_container">
+            <div class="left_group">
+                <div class="bottom_logo"><img src="../footer/matchupz_logo_text.png" alt="logo" loading="lazy"></div>
+                <div class="social_icons">
+                    <a href="#"><img src="../footer/youtube.png" alt="YouTube" loading="lazy"></a>
+                    <a href="#"><img src="../footer/tiktok.png" alt="TikTok" loading="lazy"></a>
+                    <a href="#"><img src="../footer/instagram.png" alt="Instagram" loading="lazy"></a>
+                    <a href="#"><img src="../footer/linkedin.png" alt="LinkedIn" loading="lazy"></a>
+                </div>
+            </div>
+            <nav class="nav_links">
+                <a href="#">Kontakt</a>
+                <a href="../footer_links/imrpessum.html">Impressum</a>
+                <a href="#">FAQ</a>
+                <a href="#">Presse</a>
+            </nav>
+            <div class="bottom_right">
+                <img src="../mix/messi.png" alt="divider" class="messi_icon" loading="lazy">
+                <div class="quote">
+                    <p class="divider_quote">"Talent gewinnt Spiele, aber Teamwork und Intelligenz gewinnen Meisterschaften."</p>
+                    <p class="divider_author"> - Lionel Messi</p>
+                </div>
+            </div>
+        </div>
+        <div class="creator"><a href="mailto:karoly.orban@gmx.net">Web Design by Karoly Orban</a></div>
+    </section>
+    <script src="top_menu.js"></script>
 </body>
 </html>

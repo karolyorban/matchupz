@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('Fonts/montserrat_n.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'montserrat', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -10,10 +21,9 @@ body {
             #090f10
         );
     min-height: 100vh;
-    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* Optional: Add subtle noise texture to hide banding */
@@ -31,6 +41,140 @@ body::before {
             transparent 70%
         );
 }
+
+/*top menu start*/
+.main-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: none;
+    transition: background-color 0.3s ease;
+    z-index: 4; /* Higher than other elements */
+    margin-bottom: -12vh;
+}
+
+.main-header.scrolled {
+    background-color: rgba(61, 213, 152, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Logo as home link */
+.logo {
+    display: inline-block; /* Ensure proper sizing */
+    height: 12vh;
+    margin-left: 9rem;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover img {
+    opacity: 0.8;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 5vw;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.white_text {
+    color: white;
+}
+
+.language_menu {
+    position: fixed;
+    top: 3.5vh;
+    right: 40px; /* Positioned on the right instead of left */
+    z-index: 40; /* Higher than hamburger menu (-4) */
+}
+
+.language_menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.language_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.language_icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 20%;
+}
+
+#language_toggle {
+    opacity: 0;
+    position: absolute;
+}
+
+#language_toggle:checked ~ .language_btn .language_icon {
+    transform: rotate(90deg); /* Same toggle animation */
+}
+
+#language_toggle:checked ~ .language_box {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.language_box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    top: 100%;
+    right: 0;
+    width: 10ch;
+    margin: 0;
+    padding: 1rem 0;
+    list-style: none;
+    background-color: rgba(61, 213, 152, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+/*top menu end*/
 
 /* Shared styles for all neon lines */
 .neon-line {
@@ -130,6 +274,8 @@ body::before {
     display: flex;
     flex-direction: column;
     line-height: 0;
+    align-self: center;
+    top: 14vh;
 }
 
 h1 {
@@ -165,3 +311,135 @@ p {
 .copyright {
     color: rgba(256, 256, 256, 0.5);
 }
+
+/*footer start*/
+/* Footer Section - Exact Match from Main Page */
+.section_breaker {
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    height: 20vh;
+    background: url('../mix/section_divider.png') center/cover no-repeat;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    bottom: -20vh;
+}
+
+.breaker_container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.left_group {
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.bottom_logo {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom_logo img {
+    margin-top: 1.5vh;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.social_icons {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding-bottom: 1rem;
+}
+
+.social_icons img {
+    height: 7vh;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: grayscale(1);
+}
+
+.social_icons img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%; /* This positions links to the left of Messi */
+}
+
+.nav_links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav_links a:hover {
+    color: #ccc;
+}
+
+.messi_icon {
+    margin-left: 7%; /* Space between links and Messi image */
+    height: 18vh;
+}
+
+.quote {
+    margin-left: 3%; /* Space between Messi image and quote */
+}
+
+.divider_quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0;
+    color: white;
+}
+
+.divider_author {
+    font-size: 1.35rem;
+    margin-top: 1.5vh;
+    text-align: left;
+    color: white;
+}
+
+.bottom_right {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+}
+
+.creator {
+    position: absolute;
+    bottom: 1vh;
+    right: 1vw;
+    text-decoration: none;
+    font-size: smaller;
+}
+
+.creator a {
+    color: white;
+}
+/*footer end*/
+
