@@ -36,7 +36,6 @@ body {
     background-color: none;
     transition: background-color 0.3s ease;
     z-index: 4; /* Higher than other elements */
-    margin-bottom: -12vh;
 }
 
 .main-header.scrolled {
@@ -432,7 +431,7 @@ select {
 /*footer start*/
 /* Footer Section - Exact Match from Main Page */
 .section_breaker {
-    position: absolute; /* Keep as relative */
+    position: relative; /* Keep as relative */
     z-index: 6;
     width: 100%;
     height: 20vh;
