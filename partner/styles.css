@@ -14,14 +14,8 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background: 
-        /* Smoother version with noise to prevent banding */
-        linear-gradient(
-            to bottom,
-            #090f10,
-            #0a1618,
-            #090f10
-        );
+    background: url('partner.png');
+    background-size: cover;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -170,7 +164,7 @@ body {
     margin-top: -12vh; /* Pulls content up to overlap */
     padding-top: 12vh;
     flex-direction: column; /* Add this */
-    padding-bottom: 20vh; /* Reserve space for footer */
+    padding-bottom: 30vh; /* Reserve space for footer */
 }
 
 .back_image {
