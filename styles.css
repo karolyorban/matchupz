@@ -861,10 +861,11 @@ body {
     display: flex;
     align-items: center; /* Centers icons vertically */
     justify-content: space-between; /* Centers icons horizontally */
+    gap: 0.5vw;
 }
   
 .social_icons img {
-    height: 7vh; /* Limits icon size */
+    height: 5vh; /* Limits icon size */
     object-fit: contain;
     transition: all 0.3s ease;
     filter: grayscale(1);
