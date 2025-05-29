@@ -272,19 +272,34 @@ body::before {
     backdrop-filter: blur(2px);
     display: flex;
     flex-direction: column;
-    line-height: 0;
+    line-height: 1.5;
     align-self: center;
     margin: 14vh;
 }
 
 h1 {
-    margin: 4rem auto 3rem 7rem;
+    align-self: center;
+    margin-top: 4rem;
     color: white;
     font-size: 3rem;
 }
 
+h2 {
+    align-self: center;
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 p {
-    margin: auto 4rem auto 4rem;
+    margin: 1.3rem 4rem auto 4rem;
+    overflow-wrap: break-word
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 .divider {
@@ -308,6 +323,8 @@ p {
 }
 
 .copyright {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     color: rgba(256, 256, 256, 0.5);
 }
 
