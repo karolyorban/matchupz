@@ -475,12 +475,11 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    padding-bottom: 1rem;
+    gap: 0.5vw;
 }
 
 .social_icons img {
-    height: 7vh;
+    height: 5vh;
     object-fit: contain;
     transition: all 0.3s ease;
     filter: grayscale(1);
@@ -520,12 +519,14 @@ select {
 }
 
 .divider_quote {
+    color: white;
     font-size: 1.5rem;
     font-style: italic;
     margin: 0;
 }
 
 .divider_author {
+    color: white;
     font-size: 1.35rem;
     margin-top: 1.5vh;
     text-align: left;
